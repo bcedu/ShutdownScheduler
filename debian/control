@@ -1,0 +1,13 @@
+Source: com.github.bcedu.shutdown_sheduler
+Section: x11
+Priority: extra
+Maintainer: Eduard Berloso Clarà <eduard.bc.95@gmail.com>
+Build-Depends: cmake (>= 2.8),
+               debhelper (>= 8.0.0),
+               valac-0.26 | valac (>= 0.26)
+Standards-Version: 3.9.3
+
+Package: com.github.bcedu.shutdown_sheduler
+Architecture: any
+Depends: ${misc:Depends}, ${shlibs:Depends}
+Description: Shutdown Shwduler.
