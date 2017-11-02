@@ -70,7 +70,13 @@
         private string get_shedule_description() {
             // Returns a string with the discription of the sheduled shutdown. Example:
             // "Shutdown sheduled for HH:MM:SS DD/MM/YYYY"
-            return "Shutdown sheduled for HH:MM:SS DD/MM/YYYY";
+            int year, month, day, hour, minute;
+            this.date.date.get_ymd(out year, out month, out day);
+            hour = this.time.time.get_hour();
+            minute = this.time.time.get_minute();
+            // Build new DateTime with the data
+            DateTime obj = new DateTime.local (year, month, day, hour, minute, 0);
+            return "Shutdown sheduled for " + obj.format("%H:%M:%S %d/%m/%y");
         }
 
         private string get_shedule_remaining_time() {
