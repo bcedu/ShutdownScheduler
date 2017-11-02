@@ -70,12 +70,7 @@
         private string get_shedule_description() {
             // Returns a string with the discription of the sheduled shutdown. Example:
             // "Shutdown sheduled for HH:MM:SS DD/MM/YYYY"
-            int year, month, day, hour, minute;
-            this.date.date.get_ymd(out year, out month, out day);
-            hour = this.time.time.get_hour();
-            minute = this.time.time.get_minute();
-            // Build new DateTime with the data
-            DateTime obj = new DateTime.local (year, month, day, hour, minute, 0);
+            DateTime obj = get_widgets_time();
             return "Shutdown sheduled for " + obj.format("%H:%M:%S %d/%m/%y");
         }
 
@@ -136,12 +131,7 @@
 
         private void add_time(int min) {
           // Adds 'min' minutes to thtime that will be sheduled
-          int year, month, day, hour, minute;
-          this.date.date.get_ymd(out year, out month, out day);
-          hour = this.time.time.get_hour();
-          minute = this.time.time.get_minute();
-          // Build new DateTime with the data
-          DateTime obj = new DateTime.local (year, month, day, hour, minute, 0);
+          DateTime obj = get_widgets_time();
           // Sum 'min' minutes
           obj = obj.add_minutes(min);
           // Store new time to widgets
@@ -164,17 +154,21 @@
         private string get_minutes_to_shutdown() {
             // Returns a string with the number of minutes left for when we
             // want to program the shutdown
-            int year, month, day, hour, minute;
-            this.date.date.get_ymd(out year, out month, out day);
-            hour = this.time.time.get_hour();
-            minute = this.time.time.get_minute();
-            // Build new DateTime with the data
-            DateTime obj = new DateTime.local (year, month, day, hour, minute, 0);
+            DateTime obj = get_widgets_time();
             // Get current local time
             DateTime now = new DateTime.now_local ();
             // Calc. diff. in minutes
             TimeSpan diff = obj.difference(now);
             return (diff/60000000).to_string();
+        }
+
+        private DateTime get_widgets_time() {
+          int year, month, day, hour, minute;
+          this.date.date.get_ymd(out year, out month, out day);
+          hour = this.time.time.get_hour();
+          minute = this.time.time.get_minute();
+          // Build new DateTime with the data
+          return new DateTime.local (year, month, day, hour, minute, 0);
         }
 
         private void update_interface() {
