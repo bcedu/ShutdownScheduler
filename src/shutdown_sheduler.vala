@@ -24,6 +24,8 @@
 
         public bool shutdown_programed = false;
         Gtk.ApplicationWindow app_window;
+        Granite.Widgets.DatePicker date;
+        Granite.Widgets.TimePicker time;
 
         public ShutdownSheduler () {
             Object (application_id: "com.github.bcedu.shutdown_sheduler",
@@ -94,8 +96,10 @@
         private Gtk.Box get_time_box() {
             // Returns a Gtk.Box with interface to enter time to program shutdown
             Gtk.Box box = new Gtk.Box(Gtk.Orientation.HORIZONTAL, 0);
-            box.pack_start (new Granite.Widgets.DatePicker(), false, false, 10);
-            box.pack_start (new Granite.Widgets.TimePicker(), false, false, 10);
+            this.date = new Granite.Widgets.DatePicker();
+            this.time = new Granite.Widgets.TimePicker();
+            box.pack_start (this.date, false, false, 10);
+            box.pack_start (this.time, false, false, 10);
             return box;
         }
 
@@ -123,8 +127,19 @@
         }
 
         private string get_minutes_to_shutdown() {
-            // Returns a string with the number of minutes left for programed shutdown
-            return "1000";
+            // Returns a string with the number of minutes left for when we
+            // want to program the shutdown
+            int year, month, day, hour, minute;
+            this.date.date.get_ymd(out year, out month, out day);
+            hour = this.time.time.get_hour();
+            minute = this.time.time.get_minute();
+            // Build new DateTime with the data
+            DateTime obj = new DateTime.local (year, month, day, hour, minute, 0);
+            // Get current local time
+            DateTime now = new DateTime.now_local ();
+            // Calc. diff. in minutes
+            TimeSpan diff = obj.difference(now);
+            return (diff/60000000).to_string();
         }
 
         private void update_interface() {
