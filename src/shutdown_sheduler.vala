@@ -107,11 +107,40 @@
             // Returns a Gtk.Box with buttons to summ/substract time to programed
             // shutdown
             Gtk.Box box = new Gtk.Box(Gtk.Orientation.HORIZONTAL, 0);
-            box.pack_start (new Gtk.Button.with_label ("+15 min."), false, false, 10);
-            box.pack_start (new Gtk.Button.with_label ("+30 min."), false, false, 10);
-            box.pack_start (new Gtk.Button.with_label ("+1 h."), false, false, 10);
-            box.pack_start (new Gtk.Button.with_label ("+2 h."), false, false, 10);
+            Gtk.Button bt;
+
+            bt = new Gtk.Button.with_label ("+15 min.");
+            bt.clicked.connect (() => {add_time(15);});
+            box.pack_start (bt, false, false, 10);
+
+            bt = new Gtk.Button.with_label ("+30 min.");
+            bt.clicked.connect (() => {add_time(30);});
+            box.pack_start (bt, false, false, 10);
+
+            bt = new Gtk.Button.with_label ("+1 h.");
+            bt.clicked.connect (() => {add_time(60);});
+            box.pack_start (bt, false, false, 10);
+
+            bt = new Gtk.Button.with_label ("+2 h.");
+            bt.clicked.connect (() => {add_time(120);});
+            box.pack_start (bt, false, false, 10);
+
             return box;
+        }
+
+        private void add_time(int min) {
+          // Adds 'min' minutes to thtime that will be sheduled
+          int year, month, day, hour, minute;
+          this.date.date.get_ymd(out year, out month, out day);
+          hour = this.time.time.get_hour();
+          minute = this.time.time.get_minute();
+          // Build new DateTime with the data
+          DateTime obj = new DateTime.local (year, month, day, hour, minute, 0);
+          // Sum 'min' minutes
+          obj = obj.add_minutes(min);
+          // Store new time to widgets
+          this.date.date = obj;
+          this.time.time = obj;
         }
 
         private Gtk.Button get_shedule_program_button() {
