@@ -77,12 +77,22 @@
         private string get_shedule_remaining_time() {
             // Returns a string with the remaining time of the sheduled shutdown. Example:
             // "HH:MM:SS"
+            DateTime obj = get_widgets_time();
             return "HH:MM:SS";
         }
 
         private Gtk.Button get_shedule_cancel_button() {
             // Returns a Gtk.Button to cancel the sheduled shutdown.
-            return new Gtk.Button.with_label ("Cancel");
+            Gtk.Button bt;
+
+            bt = new Gtk.Button.with_label ("Cancel");
+            bt.clicked.connect (() => {
+                string command = "shutdown -c";
+                Posix.system(command);
+                this.shutdown_programed = false;
+                update_interface();
+            });
+            return bt;
         }
 
         private Gtk.Box get_shutdown_programer() {
