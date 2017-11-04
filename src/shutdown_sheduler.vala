@@ -23,7 +23,7 @@
     public class ShutdownSheduler : Gtk.Application {
 
         public bool shutdown_programed = false;
-        Gtk.ApplicationWindow app_window;
+        Gtk.Box main_box;
         Granite.Widgets.DatePicker date;
         Granite.Widgets.TimePicker time;
 
@@ -33,16 +33,18 @@
         }
 
         protected override void activate () {
-            app_window = new Gtk.ApplicationWindow (this);
+            Gtk.ApplicationWindow app_window = new Gtk.ApplicationWindow (this);
             app_window.title = "Shutdown Sheduler";
-        		app_window.window_position = Gtk.WindowPosition.CENTER;
+            app_window.window_position = Gtk.WindowPosition.CENTER;
 
-            Gtk.Box main_box;
+            Gtk.Box aux_box;
             if (is_shutdown_programed()) {
-                main_box = get_shutdown_info();
+                aux_box = get_shutdown_info();
             }else {
-                main_box = get_shutdown_programer();
+                aux_box = get_shutdown_programer();
             }
+            this.main_box = new Gtk.Box(Gtk.Orientation.VERTICAL, 0);
+            this.main_box.pack_start (aux_box, false, false, 10);
             app_window.add(main_box);
             app_window.show_all ();
             app_window.show ();
@@ -183,16 +185,15 @@
 
         private void update_interface() {
             // Updates interface depending on programed shutdown
-            Gtk.Box main_box;
+            Gtk.Box aux_box;
             if (is_shutdown_programed()) {
-                main_box = get_shutdown_info();
+                aux_box = get_shutdown_info();
             }else {
-                main_box = get_shutdown_programer();
+                aux_box = get_shutdown_programer();
             }
-            app_window.forall ((element) => app_window.remove (element));
-            app_window.add(main_box);
-            app_window.show_all ();
-            app_window.show ();
+            this.main_box.forall ((element) => this.main_box.remove (element));
+            this.main_box.pack_start (aux_box, false, false, 10);
+            this.main_box.show_all();
         }
 
     }
