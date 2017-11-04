@@ -80,7 +80,14 @@
             // Returns a string with the remaining time of the sheduled shutdown. Example:
             // "HH:MM:SS"
             DateTime obj = get_widgets_time();
-            return "HH:MM:SS";
+            DateTime now = new DateTime.now_local ();
+            TimeSpan diff = obj.difference(now);
+            int seconds = (int)(diff/1000000);
+            int rem_sec = seconds % 60;
+            int minutes = seconds / 60;
+            int rem_min = minutes % 60;
+            int hours = minutes / 60;
+            return hours.to_string()+":"+rem_min.to_string()+":"+rem_sec.to_string();
         }
 
         private Gtk.Button get_shedule_cancel_button() {
