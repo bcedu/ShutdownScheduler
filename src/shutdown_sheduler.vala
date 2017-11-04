@@ -24,6 +24,7 @@
 
         public bool shutdown_programed = false;
         Gtk.Box main_box;
+        Gtk.Label remaining_time_lbl;
         Granite.Widgets.DatePicker date;
         Granite.Widgets.TimePicker time;
 
@@ -64,8 +65,11 @@
             // Returns a Gtk.Box with info about programed shutdown
             Gtk.Box box = new Gtk.Box(Gtk.Orientation.VERTICAL, 0);
             box.pack_start (new Gtk.Label (get_shedule_description()), false, false, 10);
-            box.pack_start (new Gtk.Label (get_shedule_remaining_time()), false, false, 10);
+            this.remaining_time_lbl = new Gtk.Label (get_shedule_remaining_time());
+            box.pack_start (this.remaining_time_lbl, false, false, 10);
             box.pack_start (get_shedule_cancel_button(), false, false, 10);
+            // Start time function to update counter each second
+            GLib.Timeout.add_seconds (1, update_counter);
             return box;
         }
 
@@ -201,6 +205,12 @@
             this.main_box.forall ((element) => this.main_box.remove (element));
             this.main_box.pack_start (aux_box, false, false, 10);
             this.main_box.show_all();
+        }
+
+        private bool update_counter() {
+            this.remaining_time_lbl.set_text(get_shedule_remaining_time());
+            if (this.shutdown_programed) return true;
+            else return false;
         }
 
     }
