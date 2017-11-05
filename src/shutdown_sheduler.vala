@@ -49,6 +49,12 @@
             this.main_box = new Gtk.Box(Gtk.Orientation.VERTICAL, 0);
             this.main_box.pack_start (aux_box, false, false, 10);
             this.launcher = Unity.LauncherEntry.get_for_desktop_id ("com.github.bcedu.shutdown_sheduler.desktop");
+
+            app_window.delete_event.connect (() => {
+                if (this.is_shutdown_programed()) return app_window.hide_on_delete ();
+                else return false;
+            });
+
             app_window.add(main_box);
             app_window.show_all ();
             app_window.show ();
