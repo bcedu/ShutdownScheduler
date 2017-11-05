@@ -23,7 +23,7 @@ set (VERSION_INFO "ShutdownSheduler first version")
 find_package(PkgConfig)
 
 # now let's actually check for the required dependencies
-pkg_check_modules(DEPS REQUIRED gtk+-3.0 granite posix)
+pkg_check_modules(DEPS REQUIRED gtk+-3.0 granite unity)
 
 add_definitions(${DEPS_CFLAGS})
 link_libraries(${DEPS_LIBRARIES})
@@ -46,6 +46,7 @@ PACKAGES
     gtk+-3.0
     granite
     posix
+    unity
 )
 
 # tell cmake what to call the executable we just made
@@ -61,6 +62,6 @@ install (FILES ${CMAKE_CURRENT_SOURCE_DIR}/data/com.github.bcedu.shutdown_shedul
 install (FILES ${CMAKE_CURRENT_SOURCE_DIR}/data/com.github.bcedu.shutdown_sheduler.appdata.xml DESTINATION ${DATADIR}/metainfo/)
 
 # Translation files
-set (GETTEXT_PACKAGE "${CMAKE_PROJECT_NAME}")
-add_definitions (-DGETTEXT_PACKAGE="${GETTEXT_PACKAGE}")
-add_subdirectory (po)
+# set (GETTEXT_PACKAGE "${CMAKE_PROJECT_NAME}")
+# add_definitions (-DGETTEXT_PACKAGE="${GETTEXT_PACKAGE}")
+# add_subdirectory (po)
