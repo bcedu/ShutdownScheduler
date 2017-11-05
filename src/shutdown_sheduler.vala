@@ -25,6 +25,7 @@
         public bool shutdown_programed = false;
         Gtk.Box main_box;
         Gtk.Label remaining_time_lbl;
+        DateTime start_time;
         Granite.Widgets.DatePicker date;
         Granite.Widgets.TimePicker time;
 
@@ -92,6 +93,16 @@
             int rem_min = minutes % 60;
             int hours = minutes / 60;
             return hours.to_string()+":"+rem_min.to_string()+":"+rem_sec.to_string();
+        }
+
+        private double get_percentage_progres() {
+            // Returns an int between 0 and 1 representing the percentage of time
+            // that has passed since the shutdown was programed to the shutdown time
+            DateTime obj = get_widgets_time();
+            DateTime now = new DateTime.now_local ();
+            TimeSpan passed = now.difference(this.start_time);
+            TimeSpan total = obj.difference(this.start_time);
+            return (double)passed/(double)total;
         }
 
         private Gtk.Button get_shedule_cancel_button() {
@@ -169,6 +180,7 @@
                 string command = "shutdown +" + get_minutes_to_shutdown();
                 Posix.system(command);
                 this.shutdown_programed = true;
+                this.start_time = new DateTime.now_local ();
                 update_interface();
             });
             return bt;
