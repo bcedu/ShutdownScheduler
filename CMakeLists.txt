@@ -62,6 +62,6 @@ install (FILES ${CMAKE_CURRENT_SOURCE_DIR}/data/com.github.bcedu.shutdown_shedul
 install (FILES ${CMAKE_CURRENT_SOURCE_DIR}/data/com.github.bcedu.shutdown_sheduler.appdata.xml DESTINATION ${DATADIR}/metainfo/)
 
 # Translation files
-# set (GETTEXT_PACKAGE "${CMAKE_PROJECT_NAME}")
-# add_definitions (-DGETTEXT_PACKAGE="${GETTEXT_PACKAGE}")
-# add_subdirectory (po)
+set (GETTEXT_PACKAGE "${CMAKE_PROJECT_NAME}")
+add_definitions (-DGETTEXT_PACKAGE="${GETTEXT_PACKAGE}")
+add_subdirectory (po)

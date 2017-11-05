@@ -26,6 +26,7 @@
         Gtk.Box main_box;
         Gtk.Label remaining_time_lbl;
         DateTime start_time;
+        Unity.LauncherEntry launcher;
         Granite.Widgets.DatePicker date;
         Granite.Widgets.TimePicker time;
 
@@ -47,6 +48,7 @@
             }
             this.main_box = new Gtk.Box(Gtk.Orientation.VERTICAL, 0);
             this.main_box.pack_start (aux_box, false, false, 10);
+            this.launcher = Unity.LauncherEntry.get_for_desktop_id ("com.github.bcedu.shutdown_sheduler.desktop");
             app_window.add(main_box);
             app_window.show_all ();
             app_window.show ();
@@ -114,6 +116,7 @@
                 string command = "shutdown -c";
                 Posix.system(command);
                 this.shutdown_programed = false;
+                this.launcher.progress_visible = false;
                 update_interface();
             });
             return bt;
@@ -181,6 +184,7 @@
                 Posix.system(command);
                 this.shutdown_programed = true;
                 this.start_time = new DateTime.now_local ();
+                this.launcher.progress_visible = true;
                 update_interface();
             });
             return bt;
@@ -221,6 +225,7 @@
 
         private bool update_counter() {
             this.remaining_time_lbl.set_text(get_shedule_remaining_time());
+            this.launcher.progress = get_percentage_progres();
             if (this.shutdown_programed) return true;
             else return false;
         }
