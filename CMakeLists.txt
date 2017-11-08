@@ -20,7 +20,7 @@ set (EXEC_NAME "com.github.bcedu.shutdown_scheduler")
 set (RELEASE_NAME "ShutdownScheduler")
 set (VERSION "0.1")
 set (VERSION_INFO "ShutdownScheduler first version")
-
+configure_file (${CMAKE_SOURCE_DIR}/src/config.vala.cmake ${CMAKE_SOURCE_DIR}/src/config.vala)
 # we're about to use pkgconfig to make sure dependencies are installed so let's find pkgconfig first
 find_package(PkgConfig)
 
@@ -42,6 +42,7 @@ ensure_vala_version("0.16" MINIMUM)
 include(ValaPrecompile)
 vala_precompile(VALA_C ${EXEC_NAME}
     src/shutdown_scheduler.vala
+    src/config.vala
 
 # tell what libraries to use when compiling
 PACKAGES
@@ -62,6 +63,9 @@ install (FILES ${CMAKE_CURRENT_SOURCE_DIR}/data/com.github.bcedu.shutdown_schedu
 
 # install our .appdata.xml file so AppCenter will see it
 install (FILES ${CMAKE_CURRENT_SOURCE_DIR}/data/com.github.bcedu.shutdown_scheduler.appdata.xml DESTINATION ${DATADIR}/metainfo/)
+
+# install css
+INSTALL(FILES css/main.css DESTINATION ${PKGDATADIR}/css)
 
 # Translation files
 add_subdirectory (po)
