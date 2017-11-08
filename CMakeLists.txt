@@ -1,5 +1,5 @@
 # project name
-project (com.github.bcedu.shutdown_scheduler)
+project (com.github.bcedu.shutdownscheduler)
 
 # the oldest stable cmake version we support
 cmake_minimum_required (VERSION 2.6)
@@ -14,9 +14,9 @@ set (GETTEXT_PACKAGE "${CMAKE_PROJECT_NAME}")
 add_definitions (-DGETTEXT_PACKAGE="${GETTEXT_PACKAGE}")
 
 # what to call that directory where we install data too
-set (PKGDATADIR "${DATADIR}/com.github.bcedu.shutdown_scheduler")
+set (PKGDATADIR "${DATADIR}/com.github.bcedu.shutdownscheduler")
 
-set (EXEC_NAME "com.github.bcedu.shutdown_scheduler")
+set (EXEC_NAME "com.github.bcedu.shutdownscheduler")
 set (RELEASE_NAME "ShutdownScheduler")
 set (VERSION "0.1")
 set (VERSION_INFO "ShutdownScheduler first version")
@@ -41,7 +41,7 @@ ensure_vala_version("0.16" MINIMUM)
 # files we want to compile
 include(ValaPrecompile)
 vala_precompile(VALA_C ${EXEC_NAME}
-    src/shutdown_scheduler.vala
+    src/shutdownscheduler.vala
     src/config.vala
 
 # tell what libraries to use when compiling
@@ -59,10 +59,10 @@ add_executable(${EXEC_NAME} ${VALA_C})
 install (TARGETS ${EXEC_NAME} RUNTIME DESTINATION bin)
 
 # install our .desktop file so the Applications menu will see it
-install (FILES ${CMAKE_CURRENT_SOURCE_DIR}/data/com.github.bcedu.shutdown_scheduler.desktop DESTINATION ${DATADIR}/applications/)
+install (FILES ${CMAKE_CURRENT_SOURCE_DIR}/data/com.github.bcedu.shutdownscheduler.desktop DESTINATION ${DATADIR}/applications/)
 
 # install our .appdata.xml file so AppCenter will see it
-install (FILES ${CMAKE_CURRENT_SOURCE_DIR}/data/com.github.bcedu.shutdown_scheduler.appdata.xml DESTINATION ${DATADIR}/metainfo/)
+install (FILES ${CMAKE_CURRENT_SOURCE_DIR}/data/com.github.bcedu.shutdownscheduler.appdata.xml DESTINATION ${DATADIR}/metainfo/)
 
 # install css
 INSTALL(FILES css/main.css DESTINATION ${PKGDATADIR}/css)

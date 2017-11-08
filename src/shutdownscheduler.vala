@@ -31,7 +31,7 @@
         Granite.Widgets.TimePicker time;
 
         public ShutdownScheduler () {
-            Object (application_id: "com.github.bcedu.shutdown_scheduler",
+            Object (application_id: "com.github.bcedu.shutdownscheduler",
             flags: ApplicationFlags.FLAGS_NONE);
         }
 
@@ -59,7 +59,7 @@
             }
             this.main_box = new Gtk.Box(Gtk.Orientation.VERTICAL, 0);
             this.main_box.pack_start (aux_box, false, false, 10);
-            this.launcher = Unity.LauncherEntry.get_for_desktop_id ("com.github.bcedu.shutdown_scheduler.desktop");
+            this.launcher = Unity.LauncherEntry.get_for_desktop_id ("com.github.bcedu.shutdownscheduler.desktop");
 
             app_window.delete_event.connect (() => {
                 if (this.is_shutdown_programed()) return app_window.hide_on_delete ();

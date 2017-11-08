@@ -2,7 +2,7 @@
 Name=Shutdown Scheduler
 GenericName=Shutdown Scheduler App
 Categories=GTK;Utility;
-Exec=com.github.bcedu.shutdown_scheduler
+Exec=com.github.bcedu.shutdownscheduler
 Icon=applications-system
 Terminal=false
 Type=Application
