@@ -86,7 +86,7 @@
             // Returns a string with the discription of the sheduled shutdown. Example:
             // "Shutdown sheduled for HH:MM:SS DD/MM/YYYY"
             DateTime obj = get_widgets_time();
-            return "Shutdown sheduled for " + obj.format("%H:%M:%S %d/%m/%y");
+            return "Shutdown scheduled for " + obj.format("%H:%M:%S %d/%m/%y");
         }
 
         private string get_shedule_remaining_time() {
@@ -184,7 +184,7 @@
 
         private Gtk.Button get_shedule_program_button() {
             // Returns a Gtk.Button to program shutdown
-            Gtk.Button bt = new Gtk.Button.with_label ("Shedule");
+            Gtk.Button bt = new Gtk.Button.with_label ("Schedule");
             bt.clicked.connect (() => {
                 string command = "shutdown +" + get_minutes_to_shutdown();
                 Posix.system(command);
