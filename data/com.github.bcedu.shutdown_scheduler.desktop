@@ -1,0 +1,12 @@
+[Desktop Entry]
+Name=ShutdownScheduler
+GenericName=Shutdown Scheduler App
+Categories=GTK;Utility;
+Exec=com.github.bcedu.shutdown_scheduler
+Icon=com.github.bcedu.shutdown_scheduler
+Terminal=false
+Type=Application
+X-GNOME-Gettext-Domain=ShutdownScheduler
+Keywords=ShutdownScheduler;
+X-GNOME-UsesNotifications=true
+Comment=Choose when to shutdown your computer

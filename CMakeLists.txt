@@ -1,5 +1,5 @@
 # project name
-project (com.github.bcedu.shutdown_sheduler)
+project (com.github.bcedu.shutdown_scheduler)
 
 # the oldest stable cmake version we support
 cmake_minimum_required (VERSION 2.6)
@@ -10,14 +10,16 @@ list (APPEND CMAKE_MODULE_PATH ${CMAKE_SOURCE_DIR}/cmake/src)
 
 # where we install data directory (if we have any)
 set (DATADIR "${CMAKE_INSTALL_PREFIX}/share")
+set (GETTEXT_PACKAGE "${CMAKE_PROJECT_NAME}")
+add_definitions (-DGETTEXT_PACKAGE="${GETTEXT_PACKAGE}")
 
 # what to call that directory where we install data too
-set (PKGDATADIR "${DATADIR}/com.github.bcedu.shutdown_sheduler")
+set (PKGDATADIR "${DATADIR}/com.github.bcedu.shutdown_scheduler")
 
-set (EXEC_NAME "com.github.bcedu.shutdown_sheduler")
-set (RELEASE_NAME "ShutdownSheduler")
+set (EXEC_NAME "com.github.bcedu.shutdown_scheduler")
+set (RELEASE_NAME "ShutdownScheduler")
 set (VERSION "0.1")
-set (VERSION_INFO "ShutdownSheduler first version")
+set (VERSION_INFO "ShutdownScheduler first version")
 
 # we're about to use pkgconfig to make sure dependencies are installed so let's find pkgconfig first
 find_package(PkgConfig)
@@ -39,7 +41,7 @@ ensure_vala_version("0.16" MINIMUM)
 # files we want to compile
 include(ValaPrecompile)
 vala_precompile(VALA_C ${EXEC_NAME}
-    src/shutdown_sheduler.vala
+    src/shutdown_scheduler.vala
 
 # tell what libraries to use when compiling
 PACKAGES
@@ -56,12 +58,19 @@ add_executable(${EXEC_NAME} ${VALA_C})
 install (TARGETS ${EXEC_NAME} RUNTIME DESTINATION bin)
 
 # install our .desktop file so the Applications menu will see it
-install (FILES ${CMAKE_CURRENT_SOURCE_DIR}/data/com.github.bcedu.shutdown_sheduler.desktop DESTINATION ${DATADIR}/applications/)
+install (FILES ${CMAKE_CURRENT_SOURCE_DIR}/data/com.github.bcedu.shutdown_scheduler.desktop DESTINATION ${DATADIR}/applications/)
 
 # install our .appdata.xml file so AppCenter will see it
-install (FILES ${CMAKE_CURRENT_SOURCE_DIR}/data/com.github.bcedu.shutdown_sheduler.appdata.xml DESTINATION ${DATADIR}/metainfo/)
+install (FILES ${CMAKE_CURRENT_SOURCE_DIR}/data/com.github.bcedu.shutdown_scheduler.appdata.xml DESTINATION ${DATADIR}/metainfo/)
 
 # Translation files
-set (GETTEXT_PACKAGE "${CMAKE_PROJECT_NAME}")
-add_definitions (-DGETTEXT_PACKAGE="${GETTEXT_PACKAGE}")
 add_subdirectory (po)
+
+# Install icons
+install(FILES data/icons/com.github.bcedu.shutdown_scheduler.png DESTINATION ${CMAKE_INSTALL_PREFIX}/share/icons/hicolor/)
+install(FILES data/icons/com.github.bcedu.shutdown_scheduler.png DESTINATION ${CMAKE_INSTALL_PREFIX}/share/icons/hicolor/scalable/apps/)
+install(FILES data/icons/com.github.bcedu.shutdown_scheduler.png DESTINATION ${CMAKE_INSTALL_PREFIX}/share/icons/hicolor/32x32/apps/)
+install(FILES data/icons/com.github.bcedu.shutdown_scheduler.png DESTINATION ${CMAKE_INSTALL_PREFIX}/share/icons/hicolor/48x48/apps/)
+install(FILES data/icons/com.github.bcedu.shutdown_scheduler.png DESTINATION ${CMAKE_INSTALL_PREFIX}/share/icons/hicolor/64x64/apps/)
+install(FILES data/icons/com.github.bcedu.shutdown_scheduler.png DESTINATION ${CMAKE_INSTALL_PREFIX}/share/icons/hicolor/128x128/apps/)
+install(FILES data/icons/com.github.bcedu.shutdown_scheduler.png DESTINATION ${CMAKE_INSTALL_PREFIX}/share/icons/hicolor/256x256/apps/)

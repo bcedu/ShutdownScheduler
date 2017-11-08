@@ -20,7 +20,7 @@
     */
 
 
-    public class ShutdownSheduler : Gtk.Application {
+    public class ShutdownScheduler : Gtk.Application {
 
         public bool shutdown_programed = false;
         Gtk.Box main_box;
@@ -30,14 +30,14 @@
         Granite.Widgets.DatePicker date;
         Granite.Widgets.TimePicker time;
 
-        public ShutdownSheduler () {
-            Object (application_id: "com.github.bcedu.shutdown_sheduler",
+        public ShutdownScheduler () {
+            Object (application_id: "com.github.bcedu.shutdown_scheduler",
             flags: ApplicationFlags.FLAGS_NONE);
         }
 
         protected override void activate () {
             Gtk.ApplicationWindow app_window = new Gtk.ApplicationWindow (this);
-            app_window.title = "Shutdown Sheduler";
+            app_window.title = "Shutdown Scheduler";
             app_window.window_position = Gtk.WindowPosition.CENTER;
 
             Gtk.Box aux_box;
@@ -48,7 +48,7 @@
             }
             this.main_box = new Gtk.Box(Gtk.Orientation.VERTICAL, 0);
             this.main_box.pack_start (aux_box, false, false, 10);
-            this.launcher = Unity.LauncherEntry.get_for_desktop_id ("com.github.bcedu.shutdown_sheduler.desktop");
+            this.launcher = Unity.LauncherEntry.get_for_desktop_id ("com.github.bcedu.shutdown_scheduler.desktop");
 
             app_window.delete_event.connect (() => {
                 if (this.is_shutdown_programed()) return app_window.hide_on_delete ();
@@ -61,7 +61,7 @@
         }
 
         public static int main (string[] args) {
-            var app = new ShutdownSheduler ();
+            var app = new ShutdownScheduler ();
             return app.run (args);
         }
 

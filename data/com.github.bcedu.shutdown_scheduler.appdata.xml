@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+    <!-- Copyright 2017 Eduard Berloso Clarà <eduard.bc.95@gmail.com> -->
+    <component type="desktop">
+      <id>com.github.bcedu.shutdown_scheduler.desktop</id>
+      <metadata_license>CC0-1.0</metadata_license>
+      <project_license>GPL-3.0+</project_license>
+      <developer_name>Eduard Berloso Clarà</developer_name>
+      <name>Shutdown Scheduler</name>
+      <summary>Schedule your computer's shutdown easily</summary>
+      <description>
+        <p>Shutdown Scheduler is a very simple program that allows you schedule the shutdown of your computer with a simple and clear interface.</p>
+        <ul>
+            <li>Choose the specific time when you want to shutdown your computer</li>
+            <li>Fast acces buttons to add time</li>
+            <li>Watch the remaining time at any time in the program, or just make a fast look to the progress bar of the icon</li>
+            <li>Cancel the scheduled shutdown with just a button</li>
+        </ul>
+      </description>
+      <categories>
+          <category>Utils</category>
+      </categories>
+      <provides>
+          <binary>com.github.bcedu.shutdown_scheduler</binary>
+      </provides>
+      <url type="homepage">https://github.com/bcedu/ShutdownScheduler</url>
+      <url type="bugtracker">https://github.com/bcedu/ShutdownScheduler/issues</url>
+      <url type="help">https://github.com/bcedu/ShutdownScheduler/issues</url>
+    </component>

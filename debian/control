@@ -1,4 +1,4 @@
-Source: com.github.bcedu.shutdown_sheduler
+Source: com.github.bcedu.shutdown_scheduler
 Section: x11
 Priority: extra
 Maintainer: Eduard Berloso Clarà <eduard.bc.95@gmail.com>
@@ -7,7 +7,7 @@ Build-Depends: cmake (>= 2.8),
                valac-0.26 | valac (>= 0.26)
 Standards-Version: 3.9.3
 
-Package: com.github.bcedu.shutdown_sheduler
+Package: com.github.bcedu.shutdown_scheduler
 Architecture: any
 Depends: ${misc:Depends}, ${shlibs:Depends}
-Description: Shutdown Shwduler.
+Description: Shutdown Scheduler.
