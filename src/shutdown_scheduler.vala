@@ -40,6 +40,17 @@
             app_window.title = "Shutdown Scheduler";
             app_window.window_position = Gtk.WindowPosition.CENTER;
 
+            // Load CSS
+            string css_file = Constants.PKGDATADIR + "/css/main.css";
+            var provider = new Gtk.CssProvider();
+            try {
+                provider.load_from_path(css_file);
+                Gtk.StyleContext.add_provider_for_screen(Gdk.Screen.get_default(), provider, Gtk.STYLE_PROVIDER_PRIORITY_USER);
+            } catch (Error e) {
+                stderr.printf("Error: %s\n", e.message);
+            }
+
+            // Create interface
             Gtk.Box aux_box;
             if (is_shutdown_programed()) {
                 aux_box = get_shutdown_info();
@@ -73,24 +84,24 @@
         private Gtk.Box get_shutdown_info() {
             // Returns a Gtk.Box with info about programed shutdown
             Gtk.Box box = new Gtk.Box(Gtk.Orientation.VERTICAL, 0);
-            box.pack_start (new Gtk.Label (get_shedule_description()), false, false, 10);
-            this.remaining_time_lbl = new Gtk.Label (get_shedule_remaining_time());
+            box.pack_start (new Gtk.Label (get_schedule_description()), false, false, 10);
+            this.remaining_time_lbl = new Gtk.Label (get_schedule_remaining_time());
             box.pack_start (this.remaining_time_lbl, false, false, 10);
-            box.pack_start (get_shedule_cancel_button(), false, false, 10);
+            box.pack_start (get_schedule_cancel_button(), false, false, 10);
             // Start time function to update counter each second
             GLib.Timeout.add_seconds (1, update_counter);
             return box;
         }
 
-        private string get_shedule_description() {
-            // Returns a string with the discription of the sheduled shutdown. Example:
-            // "Shutdown sheduled for HH:MM:SS DD/MM/YYYY"
+        private string get_schedule_description() {
+            // Returns a string with the discription of the scheduled shutdown. Example:
+            // "Shutdown scheduled for HH:MM:SS DD/MM/YYYY"
             DateTime obj = get_widgets_time();
             return "Shutdown scheduled for " + obj.format("%H:%M:%S %d/%m/%y");
         }
 
-        private string get_shedule_remaining_time() {
-            // Returns a string with the remaining time of the sheduled shutdown. Example:
+        private string get_schedule_remaining_time() {
+            // Returns a string with the remaining time of the scheduled shutdown. Example:
             // "HH:MM:SS"
             DateTime obj = get_widgets_time();
             DateTime now = new DateTime.now_local ();
@@ -113,8 +124,8 @@
             return (double)passed/(double)total;
         }
 
-        private Gtk.Button get_shedule_cancel_button() {
-            // Returns a Gtk.Button to cancel the sheduled shutdown.
+        private Gtk.Button get_schedule_cancel_button() {
+            // Returns a Gtk.Button to cancel the scheduled shutdown.
             Gtk.Button bt;
 
             bt = new Gtk.Button.with_label ("Cancel");
@@ -129,11 +140,11 @@
         }
 
         private Gtk.Box get_shutdown_programer() {
-            // Returns a Gtk.Box with controls to shedule a shutdown
+            // Returns a Gtk.Box with controls to schedule a shutdown
             Gtk.Box box = new Gtk.Box(Gtk.Orientation.VERTICAL, 0);
             box.pack_start (get_time_box(), false, false, 10);
             box.pack_start (get_time_buttons_box(), false, false, 10);
-            box.pack_start (get_shedule_program_button(), false, false, 10);
+            box.pack_start (get_schedule_program_button(), false, false, 10);
             return box;
         }
 
@@ -154,18 +165,22 @@
             Gtk.Button bt;
 
             bt = new Gtk.Button.with_label ("+15 min.");
+            bt.get_style_context().add_class ("timebutton");
             bt.clicked.connect (() => {add_time(15);});
             box.pack_start (bt, false, false, 10);
 
             bt = new Gtk.Button.with_label ("+30 min.");
+            bt.get_style_context().add_class ("timebutton");
             bt.clicked.connect (() => {add_time(30);});
             box.pack_start (bt, false, false, 10);
 
             bt = new Gtk.Button.with_label ("+1 h.");
+            bt.get_style_context().add_class ("timebutton");
             bt.clicked.connect (() => {add_time(60);});
             box.pack_start (bt, false, false, 10);
 
             bt = new Gtk.Button.with_label ("+2 h.");
+            bt.get_style_context().add_class ("timebutton");
             bt.clicked.connect (() => {add_time(120);});
             box.pack_start (bt, false, false, 10);
 
@@ -173,7 +188,7 @@
         }
 
         private void add_time(int min) {
-          // Adds 'min' minutes to thtime that will be sheduled
+          // Adds 'min' minutes to thtime that will be scheduled
           DateTime obj = get_widgets_time();
           // Sum 'min' minutes
           obj = obj.add_minutes(min);
@@ -182,7 +197,7 @@
           this.time.time = obj;
         }
 
-        private Gtk.Button get_shedule_program_button() {
+        private Gtk.Button get_schedule_program_button() {
             // Returns a Gtk.Button to program shutdown
             Gtk.Button bt = new Gtk.Button.with_label ("Schedule");
             bt.clicked.connect (() => {
@@ -230,7 +245,7 @@
         }
 
         private bool update_counter() {
-            this.remaining_time_lbl.set_text(get_shedule_remaining_time());
+            this.remaining_time_lbl.set_text(get_schedule_remaining_time());
             this.launcher.progress = get_percentage_progres();
             if (this.shutdown_programed) return true;
             else return false;
