@@ -1,5 +1,5 @@
 [Desktop Entry]
-Name=ShutdownScheduler
+Name=Shutdown Scheduler
 GenericName=Shutdown Scheduler App
 Categories=GTK;Utility;
 Exec=com.github.bcedu.shutdown_scheduler
