@@ -65,12 +65,3 @@ install (FILES ${CMAKE_CURRENT_SOURCE_DIR}/data/com.github.bcedu.shutdown_schedu
 
 # Translation files
 add_subdirectory (po)
-
-# Install icons
-install(FILES data/icons/com.github.bcedu.shutdown_scheduler.png DESTINATION ${CMAKE_INSTALL_PREFIX}/share/icons/hicolor/)
-install(FILES data/icons/com.github.bcedu.shutdown_scheduler.png DESTINATION ${CMAKE_INSTALL_PREFIX}/share/icons/hicolor/scalable/apps/)
-install(FILES data/icons/com.github.bcedu.shutdown_scheduler.png DESTINATION ${CMAKE_INSTALL_PREFIX}/share/icons/hicolor/32x32/apps/)
-install(FILES data/icons/com.github.bcedu.shutdown_scheduler.png DESTINATION ${CMAKE_INSTALL_PREFIX}/share/icons/hicolor/48x48/apps/)
-install(FILES data/icons/com.github.bcedu.shutdown_scheduler.png DESTINATION ${CMAKE_INSTALL_PREFIX}/share/icons/hicolor/64x64/apps/)
-install(FILES data/icons/com.github.bcedu.shutdown_scheduler.png DESTINATION ${CMAKE_INSTALL_PREFIX}/share/icons/hicolor/128x128/apps/)
-install(FILES data/icons/com.github.bcedu.shutdown_scheduler.png DESTINATION ${CMAKE_INSTALL_PREFIX}/share/icons/hicolor/256x256/apps/)
