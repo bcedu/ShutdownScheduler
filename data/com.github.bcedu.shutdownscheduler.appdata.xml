@@ -17,7 +17,8 @@
         </ul>
       </description>
       <categories>
-          <category>Utils</category>
+          <category>System</category>
+          <category>Utility</category>
       </categories>
       <provides>
           <binary>com.github.bcedu.shutdownscheduler</binary>
@@ -25,4 +26,17 @@
       <url type="homepage">https://github.com/bcedu/ShutdownScheduler</url>
       <url type="bugtracker">https://github.com/bcedu/ShutdownScheduler/issues</url>
       <url type="help">https://github.com/bcedu/ShutdownScheduler/issues</url>
+      <releases>
+    ​    <release version="3.12.2" date="2013-04-12">
+    ​      <description>
+    ​        <p>Initial release</p>
+            <ul>
+                <li>Choose the specific time when you want to shutdown your computer</li>
+                <li>Fast acces buttons to add time</li>
+                <li>Watch the remaining time at any time in the program, or just make a fast look to the progress bar of the icon</li>
+                <li>Cancel the scheduled shutdown with just a button</li>
+            </ul>
+    ​      </description>
+    ​    </release>
+    ​  </releases>
     </component>
