@@ -20,6 +20,14 @@
           <category>System</category>
           <category>Utility</category>
       </categories>
+      <screenshots>
+          <screenshot type="default">
+              <image>https://raw.githubusercontent.com/bcedu/ShutdownScheduler/master/data/init_window.png</image>
+          </screenshot>
+          <screenshot type="default">
+              <image>https://raw.githubusercontent.com/bcedu/ShutdownScheduler/master/data/final_window.png</image>
+          </screenshot>
+      </screenshots>
       <provides>
           <binary>com.github.bcedu.shutdownscheduler</binary>
       </provides>
