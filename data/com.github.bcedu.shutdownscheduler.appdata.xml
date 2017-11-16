@@ -11,7 +11,7 @@
         <p>Shutdown Scheduler is a very simple program that allows you schedule the shutdown of your computer with a simple and clear interface.</p>
         <ul>
             <li>Choose the specific time when you want to shutdown your computer</li>
-            <li>Fast acces buttons to add time</li>
+            <li>Fast access buttons to add time</li>
             <li>Watch the remaining time at any time in the program, or just make a fast look to the progress bar of the icon</li>
             <li>Cancel the scheduled shutdown with just a button</li>
         </ul>
@@ -40,7 +40,7 @@
     ​        <p>Initial release</p>
             <ul>
                 <li>Choose the specific time when you want to shutdown your computer</li>
-                <li>Fast acces buttons to add time</li>
+                <li>Fast access buttons to add time</li>
                 <li>Watch the remaining time at any time in the program, or just make a fast look to the progress bar of the icon</li>
                 <li>Cancel the scheduled shutdown with just a button</li>
             </ul>
