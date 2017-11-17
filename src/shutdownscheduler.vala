@@ -67,6 +67,13 @@
             });
 
             app_window.add(main_box);
+            app_window.set_resizable(false);
+
+            var header_bar = new Gtk.HeaderBar ();
+            header_bar.get_style_context ().add_class (Gtk.STYLE_CLASS_FLAT);
+            header_bar.show_close_button = true;
+            app_window.set_titlebar (header_bar);
+
             app_window.show_all ();
             app_window.show ();
         }
