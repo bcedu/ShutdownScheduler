@@ -236,7 +236,7 @@
             DateTime now = new DateTime.now_local ();
             // Calc. diff. in minutes
             TimeSpan diff = obj.difference(now);
-            return (diff/60000000).to_string();
+            return (((int)(diff/60000000))+1).to_string();
         }
 
         private DateTime get_widgets_time() {
@@ -266,6 +266,13 @@
             if (this.get_schedule_remaining_time().split(":")[2] == "10" && this.get_schedule_remaining_time().split(":")[1] == "00") {
                 this.remaining_time_lbl.get_style_context().add_class ("redtimelabel");
             }
+
+            if (this.get_schedule_remaining_time().contains("-") && this.is_shutdown_programed()) {
+                // shutdown command only handels minutes when sheduling , not seconds.
+                // So we may have passed the time. We check if we are in negative numbers and we shutdown the computer
+                Posix.system("shutdown +0");
+            }
+
             this.launcher.progress = get_percentage_progres();
             if (this.shutdown_programed) return true;
             else return false;
