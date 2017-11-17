@@ -23,12 +23,14 @@
     public class ShutdownScheduler : Gtk.Application {
 
         public bool shutdown_programed = false;
+        bool alerted = false;
         Gtk.Box main_box;
         Gtk.Label remaining_time_lbl;
         DateTime start_time;
         Unity.LauncherEntry launcher;
         Granite.Widgets.DatePicker date;
         Granite.Widgets.TimePicker time;
+        Gtk.ApplicationWindow app_window;
 
         public ShutdownScheduler () {
             Object (application_id: "com.github.bcedu.shutdownscheduler",
@@ -36,9 +38,9 @@
         }
 
         protected override void activate () {
-            Gtk.ApplicationWindow app_window = new Gtk.ApplicationWindow (this);
-            app_window.title = "Shutdown Scheduler";
-            app_window.window_position = Gtk.WindowPosition.CENTER;
+            this.app_window = new Gtk.ApplicationWindow (this);
+            this.app_window.title = "Shutdown Scheduler";
+            this.app_window.window_position = Gtk.WindowPosition.CENTER;
 
             // Load CSS
             string css_file = Constants.PKGDATADIR + "/css/main.css";
@@ -61,21 +63,21 @@
             this.main_box.pack_start (aux_box, false, false, 10);
             this.launcher = Unity.LauncherEntry.get_for_desktop_id ("com.github.bcedu.shutdownscheduler.desktop");
 
-            app_window.delete_event.connect (() => {
+            this.app_window.delete_event.connect (() => {
                 if (this.is_shutdown_programed()) return app_window.hide_on_delete ();
                 else return false;
             });
 
-            app_window.add(main_box);
-            app_window.set_resizable(false);
+            this.app_window.add(main_box);
+            this.app_window.set_resizable(false);
 
             var header_bar = new Gtk.HeaderBar ();
             header_bar.get_style_context ().add_class (Gtk.STYLE_CLASS_FLAT);
             header_bar.show_close_button = true;
             app_window.set_titlebar (header_bar);
 
-            app_window.show_all ();
-            app_window.show ();
+            this.app_window.show_all ();
+            this.app_window.show ();
         }
 
         public static int main (string[] args) {
@@ -218,6 +220,7 @@
             // Returns a Gtk.Button to program shutdown
             Gtk.Button bt = new Gtk.Button.with_label ("Schedule");
             bt.clicked.connect (() => {
+                stdout.printf("MINUTES: +%s\n", get_minutes_to_shutdown());
                 string command = "shutdown +" + get_minutes_to_shutdown();
                 Posix.system(command);
                 this.shutdown_programed = true;
@@ -263,7 +266,11 @@
 
         private bool update_counter() {
             this.remaining_time_lbl.set_text(get_schedule_remaining_time());
-            if (this.get_schedule_remaining_time().split(":")[2] == "10" && this.get_schedule_remaining_time().split(":")[1] == "00") {
+            if (int.parse(this.get_schedule_remaining_time().split(":")[2]) < 10 && int.parse(this.get_schedule_remaining_time().split(":")[1]) == 0) {
+                if (!alerted) {
+                    this.activate ();
+                    alerted = true;
+                }
                 this.remaining_time_lbl.get_style_context().add_class ("redtimelabel");
             }
 
