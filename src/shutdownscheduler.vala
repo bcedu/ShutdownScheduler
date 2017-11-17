@@ -113,7 +113,11 @@
             int minutes = seconds / 60;
             int rem_min = minutes % 60;
             int hours = minutes / 60;
-            return hours.to_string()+":"+rem_min.to_string()+":"+rem_sec.to_string();
+            string aux1 = rem_min.to_string();
+            if (rem_min < 10) aux1 = "0"+aux1;
+            string aux2 = rem_sec.to_string();
+            if (rem_sec < 10) aux2 = "0"+aux2;
+            return hours.to_string()+":"+aux1+":"+aux2;
         }
 
         private double get_percentage_progres() {
