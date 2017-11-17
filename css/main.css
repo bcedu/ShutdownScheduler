@@ -1,3 +1,25 @@
 .timebutton {
     border-radius: 50%;
+    font-size: 12px;
+    padding: 5px;
+}
+
+.timelabel {
+    font-size: 50px;
+    padding-left: 50px;
+    padding-right: 50px;
+}
+
+.redtimelabel {
+    font-size: 50px;
+    padding-left: 50px;
+    padding-right: 50px;
+    color: red;
+}
+
+.timewidget1 {
+}
+
+.timewidget2 {
+    font-size: 12px;
 }
