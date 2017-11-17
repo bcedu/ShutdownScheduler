@@ -84,8 +84,10 @@
         private Gtk.Box get_shutdown_info() {
             // Returns a Gtk.Box with info about programed shutdown
             Gtk.Box box = new Gtk.Box(Gtk.Orientation.VERTICAL, 0);
+            box.get_style_context().add_class ("boxinfo");
             box.pack_start (new Gtk.Label (get_schedule_description()), false, false, 10);
             this.remaining_time_lbl = new Gtk.Label (get_schedule_remaining_time());
+            this.remaining_time_lbl.get_style_context().add_class ("timelabel");
             box.pack_start (this.remaining_time_lbl, false, false, 10);
             box.pack_start (get_schedule_cancel_button(), false, false, 10);
             // Start time function to update counter each second
@@ -142,6 +144,7 @@
         private Gtk.Box get_shutdown_programer() {
             // Returns a Gtk.Box with controls to schedule a shutdown
             Gtk.Box box = new Gtk.Box(Gtk.Orientation.VERTICAL, 0);
+            box.get_style_context().add_class ("boxprogramer");
             box.pack_start (get_time_box(), false, false, 10);
             box.pack_start (get_time_buttons_box(), false, false, 10);
             box.pack_start (get_schedule_program_button(), false, false, 10);
@@ -153,6 +156,9 @@
             Gtk.Box box = new Gtk.Box(Gtk.Orientation.HORIZONTAL, 0);
             this.date = new Granite.Widgets.DatePicker();
             this.time = new Granite.Widgets.TimePicker();
+            this.date.get_style_context().add_class ("timewidget1");
+            this.time.get_style_context().add_class ("timewidget2");
+
             box.pack_start (this.date, false, false, 10);
             box.pack_start (this.time, false, false, 10);
             return box;
@@ -246,6 +252,9 @@
 
         private bool update_counter() {
             this.remaining_time_lbl.set_text(get_schedule_remaining_time());
+            if (this.get_schedule_remaining_time().split(":")[2] == "10" && this.get_schedule_remaining_time().split(":")[1] == "00") {
+                this.remaining_time_lbl.get_style_context().add_class ("redtimelabel");
+            }
             this.launcher.progress = get_percentage_progres();
             if (this.shutdown_programed) return true;
             else return false;
