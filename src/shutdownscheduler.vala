@@ -24,6 +24,7 @@
 
         public bool shutdown_programed = false;
         bool alerted = false;
+        bool closed;
         Gtk.Box main_box;
         Gtk.Label remaining_time_lbl;
         DateTime start_time;
@@ -41,7 +42,7 @@
             this.app_window = new Gtk.ApplicationWindow (this);
             this.app_window.title = "Shutdown Scheduler";
             this.app_window.window_position = Gtk.WindowPosition.CENTER;
-
+            closed = false;
             // Load CSS
             string css_file = Constants.PKGDATADIR + "/css/main.css";
             var provider = new Gtk.CssProvider();
@@ -64,8 +65,10 @@
             this.launcher = Unity.LauncherEntry.get_for_desktop_id ("com.github.bcedu.shutdownscheduler.desktop");
 
             this.app_window.delete_event.connect (() => {
-                if (this.is_shutdown_programed()) return app_window.hide_on_delete ();
-                else return false;
+                if (this.is_shutdown_programed()) {
+                    closed = true;
+                    return app_window.hide_on_delete ();
+                }else return false;
             });
 
             this.app_window.add(main_box);
@@ -267,8 +270,9 @@
         private bool update_counter() {
             this.remaining_time_lbl.set_text(get_schedule_remaining_time());
             if (int.parse(this.get_schedule_remaining_time().split(":")[2]) < 10 && int.parse(this.get_schedule_remaining_time().split(":")[1]) == 0) {
-                if (!alerted) {
+                if (!alerted & closed) {
                     this.activate ();
+                    this.app_window.present();
                     alerted = true;
                 }
                 this.remaining_time_lbl.get_style_context().add_class ("redtimelabel");
