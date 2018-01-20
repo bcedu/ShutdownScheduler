@@ -35,7 +35,15 @@
       <url type="bugtracker">https://github.com/bcedu/ShutdownScheduler/issues</url>
       <url type="help">https://github.com/bcedu/ShutdownScheduler/issues</url>
       <releases>
-    ​    <release version="3.12.2" date="2013-04-12">
+    ​    <release version="1.1.1" date="2018-01-20">
+    ​      <description>
+    ​        <p>Update release</p>
+            <ul>
+                <li>Change the fast acces button "2 h." for "5 min."</li>
+            </ul>
+    ​      </description>
+    ​    </release>
+    ​    <release version="1.1.0" date="2013-04-12">
     ​      <description>
     ​        <p>Initial release</p>
             <ul>

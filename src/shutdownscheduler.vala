@@ -186,6 +186,11 @@
             Gtk.Box box = new Gtk.Box(Gtk.Orientation.HORIZONTAL, 0);
             Gtk.Button bt;
 
+            bt = new Gtk.Button.with_label ("+5 min.");
+            bt.get_style_context().add_class ("timebutton");
+            bt.clicked.connect (() => {add_time(5);});
+            box.pack_start (bt, false, false, 10);
+
             bt = new Gtk.Button.with_label ("+15 min.");
             bt.get_style_context().add_class ("timebutton");
             bt.clicked.connect (() => {add_time(15);});
@@ -199,11 +204,6 @@
             bt = new Gtk.Button.with_label ("+1 h.");
             bt.get_style_context().add_class ("timebutton");
             bt.clicked.connect (() => {add_time(60);});
-            box.pack_start (bt, false, false, 10);
-
-            bt = new Gtk.Button.with_label ("+2 h.");
-            bt.get_style_context().add_class ("timebutton");
-            bt.clicked.connect (() => {add_time(120);});
             box.pack_start (bt, false, false, 10);
 
             return box;

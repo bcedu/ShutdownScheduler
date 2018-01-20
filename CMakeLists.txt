@@ -18,7 +18,7 @@ set (PKGDATADIR "${DATADIR}/com.github.bcedu.shutdownscheduler")
 
 set (EXEC_NAME "com.github.bcedu.shutdownscheduler")
 set (RELEASE_NAME "ShutdownScheduler")
-set (VERSION "0.1")
+set (VERSION "1.0")
 set (VERSION_INFO "ShutdownScheduler first version")
 configure_file (${CMAKE_SOURCE_DIR}/src/config.vala.cmake ${CMAKE_SOURCE_DIR}/src/config.vala)
 # we're about to use pkgconfig to make sure dependencies are installed so let's find pkgconfig first
