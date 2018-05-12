@@ -33,6 +33,8 @@
         Granite.Widgets.DatePicker date;
         Granite.Widgets.TimePicker time;
         Gtk.ApplicationWindow app_window;
+        string appdata_dir;
+        string conf_path;
 
         public ShutdownScheduler () {
             Object (application_id: "com.github.bcedu.shutdownscheduler",
@@ -52,6 +54,16 @@
                 Gtk.StyleContext.add_provider_for_screen(Gdk.Screen.get_default(), provider, Gtk.STYLE_PROVIDER_PRIORITY_USER);
             } catch (Error e) {
                 stderr.printf("Error: %s\n", e.message);
+            }
+
+            // App dir
+            this.appdata_dir =  Environment.get_home_dir()+"/.shutdownscheduler";
+            this.conf_path = this.appdata_dir + "/shutdownscheduler_conf";
+            try {
+                File file = File.new_for_path (this.appdata_dir);
+                if (!file.query_exists()) file.make_directory ();
+            } catch (Error e) {
+                stderr.printf(e.message);
             }
 
             // Create interface
@@ -121,7 +133,10 @@
             DateTime obj = get_widgets_time();
             DateTime now = new DateTime.now_local ();
             TimeSpan diff = obj.difference(now);
-            int seconds = (int)(diff/1000000);
+            return get_str_time_rep_hh_mm_ss((int)(diff/1000000));
+        }
+
+        private string get_str_time_rep_hh_mm_ss(int seconds) {
             int rem_sec = seconds % 60;
             int minutes = seconds / 60;
             int rem_min = minutes % 60;
@@ -176,7 +191,6 @@
             this.time = new Granite.Widgets.TimePicker();
             this.date.get_style_context().add_class ("timewidget1");
             this.time.get_style_context().add_class ("timewidget2");
-
             box.pack_start (this.date, false, false, 10);
             box.pack_start (this.time, false, false, 10);
             return box;
@@ -188,37 +202,121 @@
             Gtk.Box box = new Gtk.Box(Gtk.Orientation.HORIZONTAL, 0);
             Gtk.Button bt;
 
-            bt = new Gtk.Button.with_label ("+5 min.");
+            // Create conf file if necessary
+            File file;
+            try {
+                file = File.new_for_path(this.conf_path);
+                if (!file.query_exists()) {
+                    stdout.printf(this.conf_path+"\n");
+                    file.create(FileCreateFlags.NONE);
+                    FileIOStream io = file.open_readwrite();
+                    io.seek (0, SeekType.END);
+                    var writer = new DataOutputStream(io.output_stream);
+                    writer.put_string("5;m\n");
+                    writer.put_string("15;m\n");
+                    writer.put_string("30;m\n");
+                    writer.put_string("1;h\n");
+                }
+            } catch (Error e) {
+                stderr.printf(e.message);
+            }
+
+            // Read buttons values from conf file
+            DataInputStream reader;
+            string info;
+            string btext;
+            int btime1,btime2,btime3,btime4;
+
+            try {
+                reader = new DataInputStream(file.read());
+            } catch (Error e) {
+                reader = null;
+                stderr.printf(e.message);
+            }
+
+            try {
+                info = reader.read_line(null);
+                if (info.split(";")[1] == "m") {
+                    btext = info.split(";")[0] + " min.";
+                    btime1 = int.parse(info.split(";")[0]);
+                }else {
+                    btext = info.split(";")[0] + " h.";
+                    btime1 = int.parse(info.split(";")[0]) * 60;
+                }
+            } catch (Error e) {
+                btext = "5 min";
+                btime1 = 5;
+            }
+            bt = new Gtk.Button.with_label (btext);
             bt.get_style_context().add_class ("timebutton");
-            bt.clicked.connect (() => {add_time(5);});
+            bt.clicked.connect (() => {add_time(btime1);});
             box.pack_start (bt, false, false, 10);
 
-            bt = new Gtk.Button.with_label ("+15 min.");
+            try {
+                info = reader.read_line(null);
+                if (info.split(";")[1] == "m") {
+                    btext = info.split(";")[0] + " min.";
+                    btime2 = int.parse(info.split(";")[0]);
+                }else {
+                    btext = info.split(";")[0] + " h.";
+                    btime2 = int.parse(info.split(";")[0]) * 60;
+                }
+            } catch (Error e) {
+                btext = "15 min";
+                btime2 = 15;
+            }
+            bt = new Gtk.Button.with_label (btext);
             bt.get_style_context().add_class ("timebutton");
-            bt.clicked.connect (() => {add_time(15);});
+            bt.clicked.connect (() => {add_time(btime2);});
             box.pack_start (bt, false, false, 10);
 
-            bt = new Gtk.Button.with_label ("+30 min.");
+            try {
+                info = reader.read_line(null);
+                if (info.split(";")[1] == "m") {
+                    btext = info.split(";")[0] + " min.";
+                    btime3 = int.parse(info.split(";")[0]);
+                }else {
+                    btext = info.split(";")[0] + " h.";
+                    btime3 = int.parse(info.split(";")[0]) * 60;
+                }
+            } catch (Error e) {
+                btext = "30 min";
+                btime3 = 30;
+            }
+            bt = new Gtk.Button.with_label (btext);
             bt.get_style_context().add_class ("timebutton");
-            bt.clicked.connect (() => {add_time(30);});
+            bt.clicked.connect (() => {add_time(btime3);});
             box.pack_start (bt, false, false, 10);
 
-            bt = new Gtk.Button.with_label ("+1 h.");
+            try {
+                info = reader.read_line(null);
+                if (info.split(";")[1] == "m") {
+                    btext = info.split(";")[0] + " min.";
+                    btime4 = int.parse(info.split(";")[0]);
+                }else {
+                    btext = info.split(";")[0] + " h.";
+                    btime4 = int.parse(info.split(";")[0]) * 60;
+                }
+            } catch (Error e) {
+                btext = "60 h";
+                btime4 = 60;
+            }
+            bt = new Gtk.Button.with_label (btext);
             bt.get_style_context().add_class ("timebutton");
-            bt.clicked.connect (() => {add_time(60);});
+            bt.clicked.connect (() => {add_time(btime4);});
             box.pack_start (bt, false, false, 10);
 
             return box;
         }
 
         private void add_time(int min) {
-          // Adds 'min' minutes to thtime that will be scheduled
-          DateTime obj = get_widgets_time();
-          // Sum 'min' minutes
-          obj = obj.add_minutes(min);
-          // Store new time to widgets
-          this.date.date = obj;
-          this.time.time = obj;
+            // Adds 'min' minutes to thtime that will be scheduled
+            DateTime obj = get_widgets_time();
+            // Sum 'min' minutes
+            obj = obj.add_minutes(min);
+            // Store new time to widgets
+            this.date.date = obj;
+            this.time.time = obj;
         }
 
         private Gtk.Button get_schedule_program_button() {
@@ -256,12 +354,11 @@
         }
 
         private bool update_counter() {
+            string alert_str_time = get_str_time_rep_hh_mm_ss(this.alert_seconds);
             string rmaining_time_str = get_schedule_remaining_time();
-            int sec = int.parse(rmaining_time_str.split(":")[2]);
-            int min = int.parse(rmaining_time_str.split(":")[1]);
-            int hor = int.parse(rmaining_time_str.split(":")[1]);
             this.remaining_time_lbl.set_text(rmaining_time_str);
-            if (sec < this.alert_seconds && min == 0 && hor == 0) {
+            stdout.printf("Compare %s with %s = %d\n", rmaining_time_str, alert_str_time, rmaining_time_str.collate(alert_str_time));
+            if (rmaining_time_str.collate(alert_str_time) <= 0) {
                 if (!alerted & closed) {
                     this.activate ();
                     this.app_window.present();
