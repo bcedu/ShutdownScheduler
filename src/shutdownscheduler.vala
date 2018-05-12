@@ -24,6 +24,7 @@
 
         public bool shutdown_programed = false;
         bool alerted = false;
+        int alert_seconds = 10;
         bool closed;
         Gtk.Box main_box;
         Gtk.Label remaining_time_lbl;
@@ -151,6 +152,7 @@
                 string command = "shutdown -c";
                 Posix.system(command);
                 this.shutdown_programed = false;
+                this.alerted = false;
                 this.launcher.progress_visible = false;
                 update_interface();
             });
@@ -223,26 +225,12 @@
             // Returns a Gtk.Button to program shutdown
             Gtk.Button bt = new Gtk.Button.with_label ("Schedule");
             bt.clicked.connect (() => {
-                stdout.printf("MINUTES: +%s\n", get_minutes_to_shutdown());
-                string command = "shutdown +" + get_minutes_to_shutdown();
-                Posix.system(command);
-                this.shutdown_programed = true;
                 this.start_time = new DateTime.now_local ();
+                this.shutdown_programed = true;
                 this.launcher.progress_visible = true;
                 update_interface();
             });
             return bt;
-        }
-
-        private string get_minutes_to_shutdown() {
-            // Returns a string with the number of minutes left for when we
-            // want to program the shutdown
-            DateTime obj = get_widgets_time();
-            // Get current local time
-            DateTime now = new DateTime.now_local ();
-            // Calc. diff. in minutes
-            TimeSpan diff = obj.difference(now);
-            return (((int)(diff/60000000))+1).to_string();
         }
 
         private DateTime get_widgets_time() {
@@ -268,8 +256,12 @@
         }
 
         private bool update_counter() {
-            this.remaining_time_lbl.set_text(get_schedule_remaining_time());
-            if (int.parse(this.get_schedule_remaining_time().split(":")[2]) < 10 && int.parse(this.get_schedule_remaining_time().split(":")[1]) == 0) {
+            string rmaining_time_str = get_schedule_remaining_time();
+            int sec = int.parse(rmaining_time_str.split(":")[2]);
+            int min = int.parse(rmaining_time_str.split(":")[1]);
+            int hor = int.parse(rmaining_time_str.split(":")[1]);
+            this.remaining_time_lbl.set_text(rmaining_time_str);
+            if (sec < this.alert_seconds && min == 0 && hor == 0) {
                 if (!alerted & closed) {
                     this.activate ();
                     this.app_window.present();
@@ -278,7 +270,7 @@
                 this.remaining_time_lbl.get_style_context().add_class ("redtimelabel");
             }
 
-            if (this.get_schedule_remaining_time().contains("-") && this.is_shutdown_programed()) {
+            if (rmaining_time_str.contains("-") && this.is_shutdown_programed()) {
                 // shutdown command only handels minutes when sheduling , not seconds.
                 // So we may have passed the time. We check if we are in negative numbers and we shutdown the computer
                 Posix.system("shutdown +0");
