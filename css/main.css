@@ -3,13 +3,11 @@
     font-size: 12px;
     padding: 5px;
 }
-
 .timelabel {
     font-size: 50px;
     padding-left: 50px;
     padding-right: 50px;
 }
-
 .redtimelabel {
     font-size: 50px;
     padding-left: 50px;
@@ -17,9 +15,24 @@
     color: red;
 }
 
-.timewidget1 {
-}
-
+.timewidget1 {}
 .timewidget2 {
     font-size: 12px;
 }
+
+.boxinfo {}
+.boxprogramer{}
+
+.confpanel {}
+.conf_btn_label{
+  font-weight: bold;
+  font-size: large;
+}
+.conf_btn_reset {
+  border: 0px solid white;
+}
+.conf_btn_text{}
+.conf_btn_entry{
+  background-color: white;
+}
+.conf_btn_types{}

@@ -19,6 +19,10 @@
     * Authored by: Eduard Berloso Clarà <eduard.bc.95@gmail.com>
     */
 
+    public struct ButtonConf {
+        public int bvalue;
+        public string btype;
+    }
 
     public class ShutdownScheduler : Gtk.Application {
 
@@ -90,6 +94,7 @@
             var header_bar = new Gtk.HeaderBar ();
             header_bar.get_style_context ().add_class (Gtk.STYLE_CLASS_FLAT);
             header_bar.show_close_button = true;
+            header_bar.pack_end(this.get_conf_button());
             app_window.set_titlebar (header_bar);
 
             this.app_window.show_all ();
@@ -99,6 +104,180 @@
         public static int main (string[] args) {
             var app = new ShutdownScheduler ();
             return app.run (args);
+        }
+
+        private ButtonConf get_btn_conf(int nbutton) {
+            // Hi ha 4 butons per tant nbutton pot ser 0, 1, 2 o 3
+            int time = 0;
+            string type = "m";
+            try {
+                File file = File.new_for_path(this.conf_path);
+                DataInputStream reader = new DataInputStream(file.read());
+                string info = "";
+                for (int i = 0; i<= nbutton; i++) info = reader.read_line(null);
+                time = int.parse(info.split(";")[0]);
+                type = info.split(";")[1];
+            } catch (Error e) {
+                stderr.printf(e.message);
+            }
+            return {time, type};
+        }
+
+        private void set_btn_conf(int nbutton, ButtonConf bconf) {
+            try {
+                File file = File.new_for_path(this.conf_path);
+                DataInputStream reader = new DataInputStream(file.read());
+                DataOutputStream writer = new DataOutputStream (file.replace (null, false, FileCreateFlags.NONE));
+                string line;
+                int i = 0;
+                while ((line=reader.read_line(null)) != null) {
+                    if (i == nbutton) line = bconf.bvalue.to_string()+";"+bconf.btype;
+                    writer.put_string(line+"\n");
+                    i+=1;
+                }
+            }catch (Error e){
+                error("%s", e.message);
+            }
+        }
+
+        private void show_conf_panel(Gtk.Button button) {
+            var confpw = new Gtk.Popover(button);
+            confpw.set_position(Gtk.PositionType.BOTTOM);
+            confpw.get_style_context().add_class ("confpanel");
+            Gtk.Box vbox = new Gtk.Box (Gtk.Orientation.VERTICAL, 1);
+            vbox.margin = 10;
+
+            // Section text
+            Gtk.Label lb = new Gtk.Label("Fast acces buttons");
+            lb.get_style_context().add_class ("conf_btn_label");
+            Gtk.Box hbox = new Gtk.Box(Gtk.Orientation.HORIZONTAL, 1);
+            hbox.pack_start(lb, true, true, 0);
+            // Reset buttons button
+            Gtk.Button btn = new Gtk.Button.from_icon_name ("gtk-refresh", Gtk.IconSize.BUTTON);
+            btn.get_style_context().add_class ("conf_btn_reset");
+            btn.set_border_width(0);
+            btn.clicked.connect(() => {
+                confpw.hide();
+                create_conf_file();
+                update_interface();
+            });
+            hbox.pack_end(btn, false, false, 0);
+            vbox.pack_start(hbox, true, true, 5);
+
+            // Button 1
+            hbox = new Gtk.Box(Gtk.Orientation.HORIZONTAL, 1);
+            ButtonConf bconf = get_btn_conf(0);
+            Gtk.Label text = new Gtk.Label("Button 1");
+            text.get_style_context().add_class ("conf_btn_text");
+            Gtk.Entry entry1 = new Gtk.Entry();
+            entry1.get_style_context().add_class ("conf_btn_entry");
+            entry1.set_text(bconf.bvalue.to_string());
+            Gtk.ComboBoxText types1 = new Gtk.ComboBoxText ();
+            types1.get_style_context().add_class ("conf_btn_types");
+            types1.append_text ("minutes");
+            types1.append_text ("hours");
+            if (bconf.btype == "m") types1.set_active(0);
+            else types1.set_active(1);
+            hbox.pack_end(types1, false, false, 0);
+            hbox.pack_end(entry1, false, false, 0);
+            hbox.pack_end(text, true, true, 10);
+            vbox.pack_start (hbox, true, true, 0);
+
+            // Button 2
+            hbox = new Gtk.Box(Gtk.Orientation.HORIZONTAL, 1);
+            bconf = get_btn_conf(1);
+            text = new Gtk.Label("Button 2");
+            text.get_style_context().add_class ("conf_btn_text");
+            Gtk.Entry entry2 = new Gtk.Entry();
+            entry2.get_style_context().add_class ("conf_btn_entry");
+            entry2.set_text(bconf.bvalue.to_string());
+            Gtk.ComboBoxText types2 = new Gtk.ComboBoxText ();
+            types2.get_style_context().add_class ("conf_btn_types");
+            types2.append_text ("minutes");
+            types2.append_text ("hours");
+            if (bconf.btype == "m") types2.set_active(0);
+            else types2.set_active(1);
+            hbox.pack_end(types2, false, false, 0);
+            hbox.pack_end(entry2, false, false, 0);
+            hbox.pack_end(text, true, true, 10);
+            vbox.pack_start (hbox, true, true, 0);
+
+            // Button 3
+            hbox = new Gtk.Box(Gtk.Orientation.HORIZONTAL, 1);
+            bconf = get_btn_conf(2);
+            text = new Gtk.Label("Button 3");
+            text.get_style_context().add_class ("conf_btn_text");
+            Gtk.Entry entry3 = new Gtk.Entry();
+            entry3.get_style_context().add_class ("conf_btn_entry");
+            entry3.set_text(bconf.bvalue.to_string());
+            Gtk.ComboBoxText types3 = new Gtk.ComboBoxText ();
+            types3.get_style_context().add_class ("conf_btn_types");
+            types3.append_text ("minutes");
+            types3.append_text ("hours");
+            if (bconf.btype == "m") types3.set_active(0);
+            else types3.set_active(1);
+            hbox.pack_end(types3, false, false, 0);
+            hbox.pack_end(entry3, false, false, 0);
+            hbox.pack_end(text, true, true, 10);
+            vbox.pack_start (hbox, true, true, 0);
+
+            // Button 4
+            hbox = new Gtk.Box(Gtk.Orientation.HORIZONTAL, 1);
+            bconf = get_btn_conf(3);
+            text = new Gtk.Label("Button 4");
+            text.get_style_context().add_class ("conf_btn_text");
+            Gtk.Entry entry4 = new Gtk.Entry();
+            entry4.get_style_context().add_class ("conf_btn_entry");
+            entry4.set_text(bconf.bvalue.to_string());
+            Gtk.ComboBoxText types4 = new Gtk.ComboBoxText ();
+            types4.get_style_context().add_class ("conf_btn_types");
+            types4.append_text ("minutes");
+            types4.append_text ("hours");
+            if (bconf.btype == "m") types4.set_active(0);
+            else types4.set_active(1);
+            hbox.pack_end(types4, false, false, 0);
+            hbox.pack_end(entry4, false, false, 0);
+            hbox.pack_end(text, true, true, 10);
+            vbox.pack_start (hbox, true, true, 0);
+
+            confpw.add(vbox);
+            confpw.show_all();
+            confpw.closed.connect(() => {
+                int sv;
+                string st;
+
+                sv = int.parse(entry1.get_text());
+                st = types1.get_active_text();
+                if (st == "minutes") st = "m";
+                else st = "h";
+                set_btn_conf(0, {sv,st});
+
+                sv = int.parse(entry2.get_text());
+                st = types2.get_active_text();
+                if (st == "minutes") st = "m";
+                else st = "h";
+                set_btn_conf(1, {sv,st});
+
+                sv = int.parse(entry3.get_text());
+                st = types3.get_active_text();
+                if (st == "minutes") st = "m";
+                else st = "h";
+                set_btn_conf(2, {sv,st});
+
+                sv = int.parse(entry4.get_text());
+                st = types4.get_active_text();
+                if (st == "minutes") st = "m";
+                else st = "h";
+                set_btn_conf(3, {sv,st});
+
+                update_interface();
+            });
+        }
+
+        private Gtk.Button get_conf_button() {
+            Gtk.Button btn = new Gtk.Button.from_icon_name ("document-properties", Gtk.IconSize.BUTTON);
+            btn.clicked.connect(show_conf_panel);
+            return btn;
         }
 
         private bool is_shutdown_programed() {
@@ -178,9 +357,9 @@
             // Returns a Gtk.Box with controls to schedule a shutdown
             Gtk.Box box = new Gtk.Box(Gtk.Orientation.VERTICAL, 0);
             box.get_style_context().add_class ("boxprogramer");
-            box.pack_start (get_time_box(), false, false, 10);
-            box.pack_start (get_time_buttons_box(), false, false, 10);
-            box.pack_start (get_schedule_program_button(), false, false, 10);
+            box.pack_start (get_time_box(), true, true, 10);
+            box.pack_start (get_time_buttons_box(), true, true, 10);
+            box.pack_start (get_schedule_program_button(), true, true, 10);
             return box;
         }
 
@@ -196,6 +375,23 @@
             return box;
         }
 
+        private File create_conf_file() {
+            File file;
+            try {
+                file = File.new_for_path(this.conf_path);
+                if (file.query_exists()) file.delete ();
+                file.create(FileCreateFlags.NONE);
+                FileIOStream io = file.open_readwrite();
+                io.seek (0, SeekType.END);
+                var writer = new DataOutputStream(io.output_stream);
+                writer.put_string("5;m\n");
+                writer.put_string("15;m\n");
+                writer.put_string("30;m\n");
+                writer.put_string("1;h\n");
+            } catch (Error e) {stderr.printf(e.message);}
+            return file;
+        }
+
         private Gtk.Box get_time_buttons_box() {
             // Returns a Gtk.Box with buttons to summ/substract time to programed
             // shutdown
@@ -203,23 +399,8 @@
             Gtk.Button bt;
 
             // Create conf file if necessary
-            File file;
-            try {
-                file = File.new_for_path(this.conf_path);
-                if (!file.query_exists()) {
-                    stdout.printf(this.conf_path+"\n");
-                    file.create(FileCreateFlags.NONE);
-                    FileIOStream io = file.open_readwrite();
-                    io.seek (0, SeekType.END);
-                    var writer = new DataOutputStream(io.output_stream);
-                    writer.put_string("5;m\n");
-                    writer.put_string("15;m\n");
-                    writer.put_string("30;m\n");
-                    writer.put_string("1;h\n");
-                }
-            } catch (Error e) {
-                stderr.printf(e.message);
-            }
+            File file = File.new_for_path(this.conf_path);
+            if (!file.query_exists()) file = create_conf_file();
 
             // Read buttons values from conf file
             DataInputStream reader;
@@ -250,7 +431,7 @@
             bt = new Gtk.Button.with_label (btext);
             bt.get_style_context().add_class ("timebutton");
             bt.clicked.connect (() => {add_time(btime1);});
-            box.pack_start (bt, false, false, 10);
+            box.pack_start (bt, true, true, 10);
 
             try {
                 info = reader.read_line(null);
@@ -268,7 +449,7 @@
             bt = new Gtk.Button.with_label (btext);
             bt.get_style_context().add_class ("timebutton");
             bt.clicked.connect (() => {add_time(btime2);});
-            box.pack_start (bt, false, false, 10);
+            box.pack_start (bt, true, true, 10);
 
             try {
                 info = reader.read_line(null);
@@ -286,7 +467,7 @@
             bt = new Gtk.Button.with_label (btext);
             bt.get_style_context().add_class ("timebutton");
             bt.clicked.connect (() => {add_time(btime3);});
-            box.pack_start (bt, false, false, 10);
+            box.pack_start (bt, true, true, 10);
 
             try {
                 info = reader.read_line(null);
@@ -304,7 +485,7 @@
             bt = new Gtk.Button.with_label (btext);
             bt.get_style_context().add_class ("timebutton");
             bt.clicked.connect (() => {add_time(btime4);});
-            box.pack_start (bt, false, false, 10);
+            box.pack_start (bt, true, true, 10);
 
             return box;
         }
@@ -357,7 +538,6 @@
             string alert_str_time = get_str_time_rep_hh_mm_ss(this.alert_seconds);
             string rmaining_time_str = get_schedule_remaining_time();
             this.remaining_time_lbl.set_text(rmaining_time_str);
-            stdout.printf("Compare %s with %s = %d\n", rmaining_time_str, alert_str_time, rmaining_time_str.collate(alert_str_time));
             if (rmaining_time_str.collate(alert_str_time) <= 0) {
                 if (!alerted & closed) {
                     this.activate ();
