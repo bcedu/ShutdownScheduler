@@ -26,42 +26,42 @@
 
     public class ShutdownScheduler : Gtk.Application {
 
-        public bool shutdown_programed = false;
-        bool alerted = false;
-        int alert_seconds = 10;
-        bool closed;
-        Gtk.Box main_box;
-        Gtk.Label remaining_time_lbl;
-        DateTime start_time;
-        Unity.LauncherEntry launcher;
-        Granite.Widgets.DatePicker date;
-        Granite.Widgets.TimePicker time;
-        Gtk.ApplicationWindow app_window;
-        string appdata_dir;
-        string conf_path;
+        public string appdata_dir;
+        public string conf_path;
 
-        public ShutdownScheduler () {
+        public bool shutdown_programed;
+        public bool alerted;
+        public int alert_seconds;
+        public bool closed;
+
+        public Gtk.Box main_box;
+        public Unity.LauncherEntry launcher;
+        public Gtk.ApplicationWindow app_window;
+
+        public Gtk.Label remaining_time_lbl;
+        public DateTime start_time;
+        public Granite.Widgets.DatePicker date;
+        public Granite.Widgets.TimePicker time;
+
+        public ShutdownScheduler (string? base_dir) {
             Object (application_id: "com.github.bcedu.shutdownscheduler",
             flags: ApplicationFlags.FLAGS_NONE);
+            this.init_conf_vals();
+            this.init_conf_file(base_dir);
+            this.create_conf_file();
         }
 
-        protected override void activate () {
-            this.app_window = new Gtk.ApplicationWindow (this);
-            this.app_window.title = "Shutdown Scheduler";
-            this.app_window.window_position = Gtk.WindowPosition.CENTER;
+        public void init_conf_vals() {
             closed = false;
-            // Load CSS
-            string css_file = Constants.PKGDATADIR + "/css/main.css";
-            var provider = new Gtk.CssProvider();
-            try {
-                provider.load_from_path(css_file);
-                Gtk.StyleContext.add_provider_for_screen(Gdk.Screen.get_default(), provider, Gtk.STYLE_PROVIDER_PRIORITY_USER);
-            } catch (Error e) {
-                stderr.printf("Error: %s\n", e.message);
-            }
+            shutdown_programed = false;
+            alerted = false;
+            alert_seconds = 10;
+        }
 
-            // App dir
-            this.appdata_dir =  Environment.get_home_dir()+"/.shutdownscheduler";
+        public void init_conf_file(string? base_dir) {
+            string app_dir = base_dir;
+            if (app_dir == null) app_dir = "%s/".printf(Environment.get_home_dir());
+            this.appdata_dir =  app_dir+".shutdownscheduler";
             this.conf_path = this.appdata_dir + "/shutdownscheduler_conf";
             try {
                 File file = File.new_for_path (this.appdata_dir);
@@ -69,6 +69,32 @@
             } catch (Error e) {
                 stderr.printf(e.message);
             }
+        }
+
+        public File create_conf_file() {
+            File file;
+            try {
+                file = File.new_for_path(this.conf_path);
+                if (file.query_exists()) file.delete ();
+                file.create(FileCreateFlags.NONE);
+                FileIOStream io = file.open_readwrite();
+                io.seek (0, SeekType.END);
+                var writer = new DataOutputStream(io.output_stream);
+                writer.put_string("5;m\n");
+                writer.put_string("15;m\n");
+                writer.put_string("30;m\n");
+                writer.put_string("1;h\n");
+            } catch (Error e) {stderr.printf(e.message);}
+            return file;
+        }
+
+        protected override void activate () {
+            closed = false;
+            this.app_window = new Gtk.ApplicationWindow (this);
+            this.app_window.title = "Shutdown Scheduler";
+            this.app_window.window_position = Gtk.WindowPosition.CENTER;
+            // Css
+            this.init_css();
 
             // Create interface
             Gtk.Box aux_box;
@@ -83,7 +109,6 @@
 
             this.app_window.delete_event.connect (() => {
                 if (this.is_shutdown_programed()) {
-                    closed = true;
                     return app_window.hide_on_delete ();
                 }else return false;
             });
@@ -101,12 +126,24 @@
             this.app_window.show ();
         }
 
+        public void init_css() {
+            // Load CSS
+            string css_file = Constants.PKGDATADIR + "/css/main.css";
+            var provider = new Gtk.CssProvider();
+            try {
+                provider.load_from_path(css_file);
+                Gtk.StyleContext.add_provider_for_screen(Gdk.Screen.get_default(), provider, Gtk.STYLE_PROVIDER_PRIORITY_USER);
+            } catch (Error e) {
+                stderr.printf("Error: %s\n", e.message);
+            }
+        }
+
         public static int main (string[] args) {
-            var app = new ShutdownScheduler ();
+            var app = new ShutdownScheduler (null);
             return app.run (args);
         }
 
-        private ButtonConf get_btn_conf(int nbutton) {
+        public ButtonConf get_btn_conf(int nbutton) {
             // Hi ha 4 butons per tant nbutton pot ser 0, 1, 2 o 3
             int time = 0;
             string type = "m";
@@ -123,7 +160,7 @@
             return {time, type};
         }
 
-        private void set_btn_conf(int nbutton, ButtonConf bconf) {
+        public void set_btn_conf(int nbutton, ButtonConf bconf) {
             try {
                 File file = File.new_for_path(this.conf_path);
                 DataInputStream reader = new DataInputStream(file.read());
@@ -140,7 +177,7 @@
             }
         }
 
-        private void show_conf_panel(Gtk.Button button) {
+        public void show_conf_panel(Gtk.Button button) {
             var confpw = new Gtk.Popover(button);
             confpw.set_position(Gtk.PositionType.BOTTOM);
             confpw.get_style_context().add_class ("confpanel");
@@ -274,18 +311,18 @@
             });
         }
 
-        private Gtk.Button get_conf_button() {
+        public Gtk.Button get_conf_button() {
             Gtk.Button btn = new Gtk.Button.from_icon_name ("document-properties", Gtk.IconSize.BUTTON);
             btn.clicked.connect(show_conf_panel);
             return btn;
         }
 
-        private bool is_shutdown_programed() {
+        public bool is_shutdown_programed() {
             // Returns True if there is any shutdown programed in the system
             return this.shutdown_programed;
         }
 
-        private Gtk.Box get_shutdown_info() {
+        public Gtk.Box get_shutdown_info() {
             // Returns a Gtk.Box with info about programed shutdown
             Gtk.Box box = new Gtk.Box(Gtk.Orientation.VERTICAL, 0);
             box.get_style_context().add_class ("boxinfo");
@@ -299,14 +336,14 @@
             return box;
         }
 
-        private string get_schedule_description() {
+        public string get_schedule_description() {
             // Returns a string with the discription of the scheduled shutdown. Example:
             // "Shutdown scheduled for HH:MM:SS DD/MM/YYYY"
             DateTime obj = get_widgets_time();
             return "Shutdown scheduled for " + obj.format("%H:%M:%S %d/%m/%y");
         }
 
-        private string get_schedule_remaining_time() {
+        public string get_schedule_remaining_time() {
             // Returns a string with the remaining time of the scheduled shutdown. Example:
             // "HH:MM:SS"
             DateTime obj = get_widgets_time();
@@ -315,7 +352,7 @@
             return get_str_time_rep_hh_mm_ss((int)(diff/1000000));
         }
 
-        private string get_str_time_rep_hh_mm_ss(int seconds) {
+        public string get_str_time_rep_hh_mm_ss(int seconds) {
             int rem_sec = seconds % 60;
             int minutes = seconds / 60;
             int rem_min = minutes % 60;
@@ -327,7 +364,7 @@
             return hours.to_string()+":"+aux1+":"+aux2;
         }
 
-        private double get_percentage_progres() {
+        public double get_percentage_progres() {
             // Returns an int between 0 and 1 representing the percentage of time
             // that has passed since the shutdown was programed to the shutdown time
             DateTime obj = get_widgets_time();
@@ -337,7 +374,7 @@
             return (double)passed/(double)total;
         }
 
-        private Gtk.Button get_schedule_cancel_button() {
+        public Gtk.Button get_schedule_cancel_button() {
             // Returns a Gtk.Button to cancel the scheduled shutdown.
             Gtk.Button bt;
 
@@ -353,7 +390,7 @@
             return bt;
         }
 
-        private Gtk.Box get_shutdown_programer() {
+        public Gtk.Box get_shutdown_programer() {
             // Returns a Gtk.Box with controls to schedule a shutdown
             Gtk.Box box = new Gtk.Box(Gtk.Orientation.VERTICAL, 0);
             box.get_style_context().add_class ("boxprogramer");
@@ -363,7 +400,7 @@
             return box;
         }
 
-        private Gtk.Box get_time_box() {
+        public Gtk.Box get_time_box() {
             // Returns a Gtk.Box with interface to enter time to program shutdown
             Gtk.Box box = new Gtk.Box(Gtk.Orientation.HORIZONTAL, 0);
             this.date = new Granite.Widgets.DatePicker();
@@ -375,24 +412,7 @@
             return box;
         }
 
-        private File create_conf_file() {
-            File file;
-            try {
-                file = File.new_for_path(this.conf_path);
-                if (file.query_exists()) file.delete ();
-                file.create(FileCreateFlags.NONE);
-                FileIOStream io = file.open_readwrite();
-                io.seek (0, SeekType.END);
-                var writer = new DataOutputStream(io.output_stream);
-                writer.put_string("5;m\n");
-                writer.put_string("15;m\n");
-                writer.put_string("30;m\n");
-                writer.put_string("1;h\n");
-            } catch (Error e) {stderr.printf(e.message);}
-            return file;
-        }
-
-        private Gtk.Box get_time_buttons_box() {
+        public Gtk.Box get_time_buttons_box() {
             // Returns a Gtk.Box with buttons to summ/substract time to programed
             // shutdown
             Gtk.Box box = new Gtk.Box(Gtk.Orientation.HORIZONTAL, 0);
@@ -490,7 +510,7 @@
             return box;
         }
 
-        private void add_time(int min) {
+        public void add_time(int min) {
             // Adds 'min' minutes to thtime that will be scheduled
             DateTime obj = get_widgets_time();
             // Sum 'min' minutes
@@ -500,7 +520,7 @@
             this.time.time = obj;
         }
 
-        private Gtk.Button get_schedule_program_button() {
+        public Gtk.Button get_schedule_program_button() {
             // Returns a Gtk.Button to program shutdown
             Gtk.Button bt = new Gtk.Button.with_label ("Schedule");
             bt.clicked.connect (() => {
@@ -512,7 +532,7 @@
             return bt;
         }
 
-        private DateTime get_widgets_time() {
+        public DateTime get_widgets_time() {
           int year, month, day, hour, minute;
           this.date.date.get_ymd(out year, out month, out day);
           hour = this.time.time.get_hour();
@@ -521,7 +541,7 @@
           return new DateTime.local (year, month, day, hour, minute, 0);
         }
 
-        private void update_interface() {
+        public void update_interface() {
             // Updates interface depending on programed shutdown
             Gtk.Box aux_box;
             if (is_shutdown_programed()) {
@@ -534,7 +554,7 @@
             this.main_box.show_all();
         }
 
-        private bool update_counter() {
+        public bool update_counter() {
             string alert_str_time = get_str_time_rep_hh_mm_ss(this.alert_seconds);
             string rmaining_time_str = get_schedule_remaining_time();
             this.remaining_time_lbl.set_text(rmaining_time_str);
