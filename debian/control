@@ -14,3 +14,4 @@ Package: com.github.bcedu.shutdownscheduler
 Architecture: any
 Depends: ${misc:Depends}, ${shlibs:Depends}
 Description: Shutdown Scheduler.
+  ShutdownSheduler is an extremely simple program used to shutdown the computer in a specific date time.

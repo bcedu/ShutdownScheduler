@@ -8,7 +8,7 @@
       <name>Shutdown Scheduler</name>
       <summary>Schedule your computer's shutdown easily</summary>
       <description>
-        <p>Shutdown Scheduler is a very simple program that allows you schedule the shutdown of your computer with a simple and clear interface.</p>
+        <p>ShutdownSheduler is an extremely simple program used to shutdown the computer in a specific date time. It provides a simple and clear interface to shedule the shutdown.</p>
         <ul>
             <li>Choose the specific time when you want to shutdown your computer</li>
             <li>Fast access buttons to add time</li>
