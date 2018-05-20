@@ -21,7 +21,7 @@
 
 ### Install .deb file
 
-Check out the last release to download and install the .deb file with your favourite program or by typing:
+Check out the [last release](https://github.com/bcedu/ShutdownScheduler/releases/tag/v1.2.1) to download and install the .deb file with your favourite program or by typing:
 
 `dpkg -i filename.deb`
 
