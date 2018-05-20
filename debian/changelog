@@ -1,5 +1,5 @@
-shutdown_sheduler (0.1) precise; urgency=low
+com.github.bcedu.shutdownscheduler (1.2.0-1) precise; urgency=low
 
 * Initial Release.
 
--- Eduard Berloso Clarà <eduard.bc.95@gmail.com>  Tue, 9 Apr 2013 04:53:39 -0500
+ -- Eduard Berloso Clarà <eduard.bc.95@gmail.com>  Tue, 9 Apr 2013 04:53:39 -0500
