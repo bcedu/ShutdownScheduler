@@ -1,6 +1,29 @@
 # Shutdown Scheduler
 
+
+<p>ShutdownSheduler is an extremely simple program used to shutdown the computer in a specific date time. It provides a simple and clear interface to shedule the shutdown.</p>
+        <ul>
+            <li>Choose the specific time when you want to shutdown your computer</li>
+            <li>Fast access buttons to add time</li>
+            <li>Customize the fast acces buttons with your own times</li>
+            <li>Watch the remaining time at any time in the program, or just make a fast look to the progress bar of the icon</li>
+            <li>Cancel the scheduled shutdown with just a button</li>
+        </ul>
+        
+<p float="left">
+  <img src="/data/init_window.png" width="49%" />
+  <img src="/data/final_window.png" width="49%" /> 
+</p>
+     
+        
+
 ## Installation
+
+### Install .deb file
+
+Check out the last release to download and install the .deb file with your favourite program or by typing:
+
+`dpkg -i filename.deb`
 
 ### Elementary App Store
 
@@ -31,6 +54,12 @@ This script simply does the same that you would have done in manual installation
 DO NOT DELETE FILES AFTER INSTALLATION, THEY ARE NEEDED DURING UNINSTALL PROCESS
 
 ## Uninstall
+
+### Uninstall with dpkg
+
+If you installed the program with the .deb file or through the elementary os store you can unsintall it with the following command:
+
+`dpkg -r com.github.bcedu.shutdownscheduler`
 
 ### Elementary App Store
 
