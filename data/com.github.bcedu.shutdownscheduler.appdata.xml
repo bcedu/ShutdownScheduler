@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
     <!-- Copyright 2017 Eduard Berloso Clarà <eduard.bc.95@gmail.com> -->
     <component type="desktop">
-      <id>com.github.bcedu.shutdownscheduler.desktop</id>
+      <id>com.github.bcedu.shutdownscheduler</id>
       <metadata_license>CC0-1.0</metadata_license>
       <project_license>GPL-3.0+</project_license>
       <developer_name>Eduard Berloso Clarà</developer_name>
@@ -39,14 +39,19 @@
       <url type="bugtracker">https://github.com/bcedu/ShutdownScheduler/issues</url>
       <url type="help">https://github.com/bcedu/ShutdownScheduler/issues</url>
       <releases>
+        <release version="1.3.0" date="2018-09-11">
+    ​      <description>
+    ​        <p>Juno release</p>
+    ​      </description>
+    ​    </release>
         <release version="1.2.0" date="2018-05-13">
-        ​      <description>
-        ​        <p>Update release</p>
-                <ul>
-                    <li>Allow customize fas acces buttons</li>
-                </ul>
-        ​      </description>
-        ​    </release>
+    ​      <description>
+    ​        <p>Update release</p>
+            <ul>
+                <li>Allow customize fas acces buttons</li>
+            </ul>
+    ​      </description>
+    ​    </release>
     ​    <release version="1.1.1" date="2018-01-20">
     ​      <description>
     ​        <p>Update release</p>
