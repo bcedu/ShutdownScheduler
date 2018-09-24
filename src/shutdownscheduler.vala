@@ -194,7 +194,7 @@
             btn.get_style_context().add_class ("conf_btn_reset");
             btn.set_border_width(0);
             btn.clicked.connect(() => {
-                confpw.hide();
+                confpw.popdown();
                 create_conf_file();
                 update_interface();
             });
@@ -278,7 +278,8 @@
             vbox.pack_start (hbox, true, true, 0);
 
             confpw.add(vbox);
-            confpw.show_all();
+            vbox.show_all();
+            confpw.popup();
             confpw.closed.connect(() => {
                 int sv;
                 string st;
