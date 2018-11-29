@@ -48,7 +48,6 @@
             flags: ApplicationFlags.FLAGS_NONE);
             this.init_conf_vals();
             this.init_conf_file(base_dir);
-            this.create_conf_file();
         }
 
         public void init_conf_vals() {
