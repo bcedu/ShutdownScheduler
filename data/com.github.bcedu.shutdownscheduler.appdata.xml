@@ -39,6 +39,11 @@
       <url type="bugtracker">https://github.com/bcedu/ShutdownScheduler/issues</url>
       <url type="help">https://github.com/bcedu/ShutdownScheduler/issues</url>
       <releases>
+        <release version="1.3.2" date="2018-11-30">
+    ​      <description>
+    ​        <p>Don't reset config file when app is started</p>
+    ​      </description>
+    ​    </release>
         <release version="1.3.0" date="2018-09-11">
     ​      <description>
     ​        <p>Juno release</p>
