@@ -444,7 +444,7 @@
                     btime1 = int.parse(info.split(";")[0]) * 60;
                 }
             } catch (Error e) {
-                btext = _("5 min");
+                btext = "5 min";
                 btime1 = 5;
             }
             bt = new Gtk.Button.with_label (btext);
@@ -462,7 +462,7 @@
                     btime2 = int.parse(info.split(";")[0]) * 60;
                 }
             } catch (Error e) {
-                btext = _("15 min");
+                btext = "15 min";
                 btime2 = 15;
             }
             bt = new Gtk.Button.with_label (btext);
@@ -480,7 +480,7 @@
                     btime3 = int.parse(info.split(";")[0]) * 60;
                 }
             } catch (Error e) {
-                btext = _("30 min");
+                btext = "30 min";
                 btime3 = 30;
             }
             bt = new Gtk.Button.with_label (btext);
@@ -498,7 +498,7 @@
                     btime4 = int.parse(info.split(";")[0]) * 60;
                 }
             } catch (Error e) {
-                btext = _("60 h");
+                btext = "60 h";
                 btime4 = 60;
             }
             bt = new Gtk.Button.with_label (btext);

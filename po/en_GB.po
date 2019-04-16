@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: com.github.bcedu.shutdownscheduler\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-04-15 20:42+0200\n"
+"POT-Creation-Date: 2019-04-16 18:18+0200\n"
 "PO-Revision-Date: 2019-04-15 20:42+0200\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -21,70 +21,54 @@ msgstr ""
 msgid "Shutdown Scheduler"
 msgstr "Shutdown Scheduler"
 
-#: src/ShutdownScheduler.vala:187
+#: src/ShutdownScheduler.vala:186
 msgid "Fast acces buttons"
 msgstr "Fast acces buttons"
 
-#: src/ShutdownScheduler.vala:206
+#: src/ShutdownScheduler.vala:205
 msgid "Button 1"
 msgstr "Button 1"
 
-#: src/ShutdownScheduler.vala:213 src/ShutdownScheduler.vala:232
-#: src/ShutdownScheduler.vala:251 src/ShutdownScheduler.vala:270
+#: src/ShutdownScheduler.vala:212 src/ShutdownScheduler.vala:231
+#: src/ShutdownScheduler.vala:250 src/ShutdownScheduler.vala:269
 msgid "minutes"
 msgstr "minutes"
 
-#: src/ShutdownScheduler.vala:214 src/ShutdownScheduler.vala:233
-#: src/ShutdownScheduler.vala:252 src/ShutdownScheduler.vala:271
+#: src/ShutdownScheduler.vala:213 src/ShutdownScheduler.vala:232
+#: src/ShutdownScheduler.vala:251 src/ShutdownScheduler.vala:270
 msgid "hours"
 msgstr "hours"
 
-#: src/ShutdownScheduler.vala:225
+#: src/ShutdownScheduler.vala:224
 msgid "Button 2"
 msgstr "Button 2"
 
-#: src/ShutdownScheduler.vala:244
+#: src/ShutdownScheduler.vala:243
 msgid "Button 3"
 msgstr "Button 3"
 
-#: src/ShutdownScheduler.vala:263
+#: src/ShutdownScheduler.vala:262
 msgid "Button 4"
 msgstr "Button 4"
 
-#: src/ShutdownScheduler.vala:343
+#: src/ShutdownScheduler.vala:342
 msgid "Shutdown scheduled for "
 msgstr "Shutdown scheduled for "
 
-#: src/ShutdownScheduler.vala:381
+#: src/ShutdownScheduler.vala:380
 msgid "Cancel"
 msgstr "Cancel"
 
-#: src/ShutdownScheduler.vala:441 src/ShutdownScheduler.vala:459
-#: src/ShutdownScheduler.vala:477 src/ShutdownScheduler.vala:495
+#: src/ShutdownScheduler.vala:440 src/ShutdownScheduler.vala:458
+#: src/ShutdownScheduler.vala:476 src/ShutdownScheduler.vala:494
 msgid "min."
 msgstr "min."
 
-#: src/ShutdownScheduler.vala:444 src/ShutdownScheduler.vala:462
-#: src/ShutdownScheduler.vala:480 src/ShutdownScheduler.vala:498
+#: src/ShutdownScheduler.vala:443 src/ShutdownScheduler.vala:461
+#: src/ShutdownScheduler.vala:479 src/ShutdownScheduler.vala:497
 msgid "h."
 msgstr "h."
 
-#: src/ShutdownScheduler.vala:448
-msgid "5 min"
-msgstr "5 min"
-
-#: src/ShutdownScheduler.vala:466
-msgid "15 min"
-msgstr "15 min"
-
-#: src/ShutdownScheduler.vala:484
-msgid "30 min"
-msgstr "30 min"
-
-#: src/ShutdownScheduler.vala:502
-msgid "60 h"
-msgstr "60 h"
-
-#: src/ShutdownScheduler.vala:525
+#: src/ShutdownScheduler.vala:524
 msgid "Schedule"
 msgstr "Schedule"
