@@ -1,0 +1,110 @@
+# English translations for extra package.
+# Copyright (C) 2019 THE extra'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the extra package.
+# Automatically generated, 2019.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: extra\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-04-15 20:42+0200\n"
+"PO-Revision-Date: 2019-04-15 20:42+0200\n"
+"Last-Translator: Automatically generated\n"
+"Language-Team: none\n"
+"Language: en_GB\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: data/com.github.bcedu.shutdownscheduler.desktop.in:3
+#: data/com.github.bcedu.shutdownscheduler.appdata.xml.in:8
+msgid "Shutdown Scheduler"
+msgstr "Shutdown Scheduler"
+
+#: data/com.github.bcedu.shutdownscheduler.desktop.in:4
+msgid "Shutdown Scheduler App"
+msgstr "Shutdown Scheduler App"
+
+#: data/com.github.bcedu.shutdownscheduler.desktop.in:7
+msgid "com.github.bcedu.shutdownscheduler"
+msgstr "com.github.bcedu.shutdownscheduler"
+
+#: data/com.github.bcedu.shutdownscheduler.desktop.in:11
+msgid "ShutdownScheduler;"
+msgstr "ShutdownScheduler;"
+
+#: data/com.github.bcedu.shutdownscheduler.desktop.in:13
+msgid "Choose when to shutdown your computer"
+msgstr "Choose when to shutdown your computer"
+
+#: data/com.github.bcedu.shutdownscheduler.appdata.xml.in:7
+msgid "Eduard Berloso Clarà"
+msgstr "Eduard Berloso Clarà"
+
+#: data/com.github.bcedu.shutdownscheduler.appdata.xml.in:9
+msgid "Schedule your computer's shutdown easily"
+msgstr "Schedule your computer's shutdown easily"
+
+#: data/com.github.bcedu.shutdownscheduler.appdata.xml.in:11
+msgid ""
+"ShutdownSheduler is an extremely simple program used to shutdown the "
+"computer in a specific date time. It provides a simple and clear interface "
+"to shedule the shutdown."
+msgstr ""
+"ShutdownSheduler is an extremely simple program used to shutdown the "
+"computer in a specific date time. It provides a simple and clear interface "
+"to shedule the shutdown."
+
+#: data/com.github.bcedu.shutdownscheduler.appdata.xml.in:13
+#: data/com.github.bcedu.shutdownscheduler.appdata.xml.in:72
+msgid "Choose the specific time when you want to shutdown your computer"
+msgstr "Choose the specific time when you want to shutdown your computer"
+
+#: data/com.github.bcedu.shutdownscheduler.appdata.xml.in:14
+#: data/com.github.bcedu.shutdownscheduler.appdata.xml.in:73
+msgid "Fast access buttons to add time"
+msgstr "Fast access buttons to add time"
+
+#: data/com.github.bcedu.shutdownscheduler.appdata.xml.in:15
+msgid "Customize the fast acces buttons with your own times"
+msgstr "Customize the fast acces buttons with your own times"
+
+#: data/com.github.bcedu.shutdownscheduler.appdata.xml.in:16
+#: data/com.github.bcedu.shutdownscheduler.appdata.xml.in:74
+msgid ""
+"Watch the remaining time at any time in the program, or just make a fast "
+"look to the progress bar of the icon"
+msgstr ""
+"Watch the remaining time at any time in the program, or just make a fast "
+"look to the progress bar of the icon"
+
+#: data/com.github.bcedu.shutdownscheduler.appdata.xml.in:17
+#: data/com.github.bcedu.shutdownscheduler.appdata.xml.in:75
+msgid "Cancel the scheduled shutdown with just a button"
+msgstr "Cancel the scheduled shutdown with just a button"
+
+#: data/com.github.bcedu.shutdownscheduler.appdata.xml.in:44
+msgid "Don't reset config file when app is started"
+msgstr "Don't reset config file when app is started"
+
+#: data/com.github.bcedu.shutdownscheduler.appdata.xml.in:49
+msgid "Juno release"
+msgstr "Juno release"
+
+#: data/com.github.bcedu.shutdownscheduler.appdata.xml.in:54
+#: data/com.github.bcedu.shutdownscheduler.appdata.xml.in:62
+msgid "Update release"
+msgstr "Update release"
+
+#: data/com.github.bcedu.shutdownscheduler.appdata.xml.in:56
+msgid "Allow customize fas acces buttons"
+msgstr "Allow customize fas acces buttons"
+
+#: data/com.github.bcedu.shutdownscheduler.appdata.xml.in:64
+msgid "Change the fast acces button \"2 h.\" for \"5 min.\""
+msgstr "Change the fast acces button \"2 h.\" for \"5 min.\""
+
+#: data/com.github.bcedu.shutdownscheduler.appdata.xml.in:70
+msgid "Initial release"
+msgstr "Initial release"
