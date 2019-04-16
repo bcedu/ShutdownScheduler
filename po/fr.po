@@ -1,7 +1,7 @@
 # French translations for com.github.bcedu.shutdownscheduler package.
 # Copyright (C) 2019 THE com.github.bcedu.shutdownscheduler'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the com.github.bcedu.shutdownscheduler package.
-# Automatically generated, 2019.
+# NathanBnm, 2019.
 #
 msgid ""
 msgstr ""
@@ -9,8 +9,8 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-04-16 18:18+0200\n"
 "PO-Revision-Date: 2019-04-15 20:42+0200\n"
-"Last-Translator: Automatically generated\n"
-"Language-Team: none\n"
+"Last-Translator: NathanBnm\n"
+"Language-Team: Français\n"
 "Language: fr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -19,56 +19,56 @@ msgstr ""
 
 #: src/ShutdownScheduler.vala:93
 msgid "Shutdown Scheduler"
-msgstr ""
+msgstr "Planificateur d'arrêt"
 
 #: src/ShutdownScheduler.vala:186
 msgid "Fast acces buttons"
-msgstr ""
+msgstr "Boutons d'accès rapide"
 
 #: src/ShutdownScheduler.vala:205
 msgid "Button 1"
-msgstr ""
+msgstr "Bouton 1"
 
 #: src/ShutdownScheduler.vala:212 src/ShutdownScheduler.vala:231
 #: src/ShutdownScheduler.vala:250 src/ShutdownScheduler.vala:269
 msgid "minutes"
-msgstr ""
+msgstr "minute(s)"
 
 #: src/ShutdownScheduler.vala:213 src/ShutdownScheduler.vala:232
 #: src/ShutdownScheduler.vala:251 src/ShutdownScheduler.vala:270
 msgid "hours"
-msgstr ""
+msgstr "heure(s)"
 
 #: src/ShutdownScheduler.vala:224
 msgid "Button 2"
-msgstr ""
+msgstr "Bouton 2"
 
 #: src/ShutdownScheduler.vala:243
 msgid "Button 3"
-msgstr ""
+msgstr "Bouton 3"
 
 #: src/ShutdownScheduler.vala:262
 msgid "Button 4"
-msgstr ""
+msgstr "Bouton 4"
 
 #: src/ShutdownScheduler.vala:342
 msgid "Shutdown scheduled for "
-msgstr ""
+msgstr "Arrêt planifié pour"
 
 #: src/ShutdownScheduler.vala:380
 msgid "Cancel"
-msgstr ""
+msgstr "Annuler"
 
 #: src/ShutdownScheduler.vala:440 src/ShutdownScheduler.vala:458
 #: src/ShutdownScheduler.vala:476 src/ShutdownScheduler.vala:494
 msgid "min."
-msgstr ""
+msgstr "min"
 
 #: src/ShutdownScheduler.vala:443 src/ShutdownScheduler.vala:461
 #: src/ShutdownScheduler.vala:479 src/ShutdownScheduler.vala:497
 msgid "h."
-msgstr ""
+msgstr "h"
 
 #: src/ShutdownScheduler.vala:524
 msgid "Schedule"
-msgstr ""
+msgstr "Planifier"

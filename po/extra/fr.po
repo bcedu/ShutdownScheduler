@@ -1,7 +1,7 @@
 # French translations for extra package.
 # Copyright (C) 2019 THE extra'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the extra package.
-# Automatically generated, 2019.
+# NathanBnm, 2019.
 #
 msgid ""
 msgstr ""
@@ -9,8 +9,8 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-04-15 20:42+0200\n"
 "PO-Revision-Date: 2019-04-15 20:42+0200\n"
-"Last-Translator: Automatically generated\n"
-"Language-Team: none\n"
+"Last-Translator: NathanBnm\n"
+"Language-Team: Français\n"
 "Language: fr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -20,31 +20,31 @@ msgstr ""
 #: data/com.github.bcedu.shutdownscheduler.desktop.in:3
 #: data/com.github.bcedu.shutdownscheduler.appdata.xml.in:8
 msgid "Shutdown Scheduler"
-msgstr ""
+msgstr "Planificateur d'arrêt"
 
 #: data/com.github.bcedu.shutdownscheduler.desktop.in:4
 msgid "Shutdown Scheduler App"
-msgstr ""
+msgstr "Application planificateur d'arrêt"
 
 #: data/com.github.bcedu.shutdownscheduler.desktop.in:7
 msgid "com.github.bcedu.shutdownscheduler"
-msgstr ""
+msgstr "com.github.bcedu.shutdownscheduler"
 
 #: data/com.github.bcedu.shutdownscheduler.desktop.in:11
 msgid "ShutdownScheduler;"
-msgstr ""
+msgstr "Planificateur d'arrêt;"
 
 #: data/com.github.bcedu.shutdownscheduler.desktop.in:13
 msgid "Choose when to shutdown your computer"
-msgstr ""
+msgstr "Choisissez quand éteindre votre ordinateur"
 
 #: data/com.github.bcedu.shutdownscheduler.appdata.xml.in:7
 msgid "Eduard Berloso Clarà"
-msgstr ""
+msgstr "Eduard Berloso Clarà"
 
 #: data/com.github.bcedu.shutdownscheduler.appdata.xml.in:9
 msgid "Schedule your computer's shutdown easily"
-msgstr ""
+msgstr "Planifiez facilement l'arrêt de votre ordinateur"
 
 #: data/com.github.bcedu.shutdownscheduler.appdata.xml.in:11
 msgid ""
@@ -52,20 +52,23 @@ msgid ""
 "computer in a specific date time. It provides a simple and clear interface "
 "to shedule the shutdown."
 msgstr ""
+"Planificateur d'arrêt est un programme extrêmement simple utilisé pour éteindre "
+"l'ordinateur à une date et une heure spécifique. Il fournit une interface simple "
+"et claire pour planifier l'arrêt de l'ordinateur."
 
 #: data/com.github.bcedu.shutdownscheduler.appdata.xml.in:13
 #: data/com.github.bcedu.shutdownscheduler.appdata.xml.in:72
 msgid "Choose the specific time when you want to shutdown your computer"
-msgstr ""
+msgstr "Choisissez le moment précis auquel vous voulez éteindre votre ordinateur"
 
 #: data/com.github.bcedu.shutdownscheduler.appdata.xml.in:14
 #: data/com.github.bcedu.shutdownscheduler.appdata.xml.in:73
 msgid "Fast access buttons to add time"
-msgstr ""
+msgstr "Boutons d'accès rapide pour ajouter du temps"
 
 #: data/com.github.bcedu.shutdownscheduler.appdata.xml.in:15
 msgid "Customize the fast acces buttons with your own times"
-msgstr ""
+msgstr "Personnalisation des boutons d'accès rapide avec vos propres durées"
 
 #: data/com.github.bcedu.shutdownscheduler.appdata.xml.in:16
 #: data/com.github.bcedu.shutdownscheduler.appdata.xml.in:74
@@ -73,33 +76,35 @@ msgid ""
 "Watch the remaining time at any time in the program, or just make a fast "
 "look to the progress bar of the icon"
 msgstr ""
+"Visualisez le temps restant à tout moment dans l'application, où jetez un coup "
+"d'oeil à la barre de progression de l'icône"
 
 #: data/com.github.bcedu.shutdownscheduler.appdata.xml.in:17
 #: data/com.github.bcedu.shutdownscheduler.appdata.xml.in:75
 msgid "Cancel the scheduled shutdown with just a button"
-msgstr ""
+msgstr "Annulez l'arrêt planifié avec un simple bouton"
 
 #: data/com.github.bcedu.shutdownscheduler.appdata.xml.in:44
 msgid "Don't reset config file when app is started"
-msgstr ""
+msgstr "Ne réinitialise pas le fichier de configuration au démarrage de l'application"
 
 #: data/com.github.bcedu.shutdownscheduler.appdata.xml.in:49
 msgid "Juno release"
-msgstr ""
+msgstr "Version pour Juno"
 
 #: data/com.github.bcedu.shutdownscheduler.appdata.xml.in:54
 #: data/com.github.bcedu.shutdownscheduler.appdata.xml.in:62
 msgid "Update release"
-msgstr ""
+msgstr "Version mise à jour"
 
 #: data/com.github.bcedu.shutdownscheduler.appdata.xml.in:56
 msgid "Allow customize fas acces buttons"
-msgstr ""
+msgstr "Personnalisation des boutons d'accès rapide"
 
 #: data/com.github.bcedu.shutdownscheduler.appdata.xml.in:64
 msgid "Change the fast acces button \"2 h.\" for \"5 min.\""
-msgstr ""
+msgstr "Passage de la valeur par défaut d'un bouton d'accès rapide de « 2h » à « 5min »"
 
 #: data/com.github.bcedu.shutdownscheduler.appdata.xml.in:70
 msgid "Initial release"
-msgstr ""
+msgstr "Version initiale"
