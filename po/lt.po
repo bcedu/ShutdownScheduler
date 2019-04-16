@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: com.github.bcedu.shutdownscheduler\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-04-16 18:40+0200\n"
+"POT-Creation-Date: 2019-04-16 19:12+0200\n"
 "PO-Revision-Date: 2019-04-15 20:42+0200\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -18,58 +18,70 @@ msgstr ""
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && (n"
 "%100<10 || n%100>=20) ? 1 : 2);\n"
 
-#: src/ShutdownScheduler.vala:93
+#: src/ShutdownScheduler.vala:93 src/ShutdownScheduler.vala:119
 msgid "Shutdown Scheduler"
 msgstr ""
 
-#: src/ShutdownScheduler.vala:186
+#: src/ShutdownScheduler.vala:187
 msgid "Fast access buttons"
 msgstr ""
 
-#: src/ShutdownScheduler.vala:205
+#: src/ShutdownScheduler.vala:193
+msgid "Reset"
+msgstr ""
+
+#: src/ShutdownScheduler.vala:207
 msgid "Button 1"
 msgstr ""
 
-#: src/ShutdownScheduler.vala:212 src/ShutdownScheduler.vala:231
-#: src/ShutdownScheduler.vala:250 src/ShutdownScheduler.vala:269
+#: src/ShutdownScheduler.vala:214 src/ShutdownScheduler.vala:233
+#: src/ShutdownScheduler.vala:252 src/ShutdownScheduler.vala:271
 msgid "minutes"
 msgstr ""
 
-#: src/ShutdownScheduler.vala:213 src/ShutdownScheduler.vala:232
-#: src/ShutdownScheduler.vala:251 src/ShutdownScheduler.vala:270
+#: src/ShutdownScheduler.vala:215 src/ShutdownScheduler.vala:234
+#: src/ShutdownScheduler.vala:253 src/ShutdownScheduler.vala:272
 msgid "hours"
 msgstr ""
 
-#: src/ShutdownScheduler.vala:224
+#: src/ShutdownScheduler.vala:226
 msgid "Button 2"
 msgstr ""
 
-#: src/ShutdownScheduler.vala:243
+#: src/ShutdownScheduler.vala:245
 msgid "Button 3"
 msgstr ""
 
-#: src/ShutdownScheduler.vala:262
+#: src/ShutdownScheduler.vala:264
 msgid "Button 4"
 msgstr ""
 
-#: src/ShutdownScheduler.vala:342
+#: src/ShutdownScheduler.vala:344
 msgid "Shutdown scheduled for "
 msgstr ""
 
-#: src/ShutdownScheduler.vala:380
+#: src/ShutdownScheduler.vala:382
 msgid "Cancel"
 msgstr ""
 
-#: src/ShutdownScheduler.vala:440 src/ShutdownScheduler.vala:458
-#: src/ShutdownScheduler.vala:476 src/ShutdownScheduler.vala:494
+#: src/ShutdownScheduler.vala:409
+msgid "Choose date"
+msgstr ""
+
+#: src/ShutdownScheduler.vala:410
+msgid "Choose time"
+msgstr ""
+
+#: src/ShutdownScheduler.vala:444 src/ShutdownScheduler.vala:462
+#: src/ShutdownScheduler.vala:480 src/ShutdownScheduler.vala:498
 msgid " min."
 msgstr ""
 
-#: src/ShutdownScheduler.vala:443 src/ShutdownScheduler.vala:461
-#: src/ShutdownScheduler.vala:479 src/ShutdownScheduler.vala:497
+#: src/ShutdownScheduler.vala:447 src/ShutdownScheduler.vala:465
+#: src/ShutdownScheduler.vala:483 src/ShutdownScheduler.vala:501
 msgid " h."
 msgstr ""
 
-#: src/ShutdownScheduler.vala:524
+#: src/ShutdownScheduler.vala:528
 msgid "Schedule"
 msgstr ""

@@ -116,6 +116,7 @@
             this.app_window.set_resizable(false);
 
             var header_bar = new Gtk.HeaderBar ();
+            header_bar.title = _("Shutdown Scheduler");
             header_bar.get_style_context ().add_class (Gtk.STYLE_CLASS_FLAT);
             header_bar.show_close_button = true;
             header_bar.pack_end(this.get_conf_button());
@@ -189,6 +190,7 @@
             hbox.pack_start(lb, true, true, 0);
             // Reset buttons button
             Gtk.Button btn = new Gtk.Button.from_icon_name ("gtk-refresh", Gtk.IconSize.BUTTON);
+            btn.tooltip_text = _("Reset");
             btn.get_style_context().add_class ("conf_btn_reset");
             btn.set_border_width(0);
             btn.clicked.connect(() => {
@@ -404,6 +406,8 @@
             Gtk.Box box = new Gtk.Box(Gtk.Orientation.HORIZONTAL, 0);
             this.date = new Granite.Widgets.DatePicker();
             this.time = new Granite.Widgets.TimePicker();
+            this.date.tooltip_text = _("Choose date");
+            this.time.tooltip_text = _("Choose time");
             this.date.get_style_context().add_class ("timewidget1");
             this.time.get_style_context().add_class ("timewidget2");
             box.pack_start (this.date, false, false, 10);
