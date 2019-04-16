@@ -25,9 +25,11 @@ Check out the [last release](https://github.com/bcedu/ShutdownScheduler/releases
 
 `dpkg -i filename.deb`
 
-### Elementary App Store
+### Get it on AppCenter
 
-Download Shutdown Scheduler through the elementary app store. It's always updated to lastest version.
+[![Get it on AppCenter](https://appcenter.elementary.io/badge.svg)](https://appcenter.elementary.io/com.github.bcedu.shutdownscheduler)
+
+Download Shutdown Scheduler through the elementary AppCenter. It's always updated to lastest version.
 Easy and fast.
 
 ### Manual Instalation
@@ -35,39 +37,18 @@ Easy and fast.
 Download last release (zip file), extract files and enter to the folder where they where extracted.
 
 Install your application with the following commands:
-- mkdir build
-- cd build
-- cmake -DCMAKE_INSTALL_PREFIX=/usr ../
-- make
-- sudo make install
-
-DO NOT DELETE FILES AFTER MANUAL INSTALLATION, THEY ARE NEEDED DURING UNINSTALL PROCESS
-
-### Python Script
-
-Download last release (zip file), extract files and enter to the folder where they where extracted. Then, run the script "cmake_installer.py" from its original location. It must be run as sudo:
-
-- sudo python3 cmake_installer.py
-
-This script simply does the same that you would have done in manual installation. So we give the same advice:
-
-DO NOT DELETE FILES AFTER INSTALLATION, THEY ARE NEEDED DURING UNINSTALL PROCESS
+- `meson build --prefix=/usr`
+- `cd build`
+- `ninja install`
 
 ## Uninstall
 
 ### Uninstall with dpkg
 
-If you installed the program with the .deb file or through the elementary os store you can unsintall it with the following command:
+If you installed the program with the .deb file or through the elementary os store you can uninstall it with the following command:
 
 `dpkg -r com.github.bcedu.shutdownscheduler`
 
-### Elementary App Store
+### Uninstall from the elementary AppCenter
 
-Just go to store and click on uninstall :)
-
-### Manual Uninstall
-
-To uninstall your application, run the script "cmake_uninstaller.py" (in the folder where files where originally extracted for manual installation).
-
-It must be run as sudo:
-- sudo python3 cmake_uninstaller.py
+Just go to AppCenter and click on uninstall :)
