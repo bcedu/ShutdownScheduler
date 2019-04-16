@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: extra\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-04-15 20:42+0200\n"
+"POT-Creation-Date: 2019-04-16 18:40+0200\n"
 "PO-Revision-Date: 2019-04-15 20:42+0200\n"
 "Last-Translator: NathanBnm\n"
 "Language-Team: Français\n"
@@ -52,14 +52,15 @@ msgid ""
 "computer in a specific date time. It provides a simple and clear interface "
 "to shedule the shutdown."
 msgstr ""
-"Planificateur d'arrêt est un programme extrêmement simple utilisé pour éteindre "
-"l'ordinateur à une date et une heure spécifique. Il fournit une interface simple "
-"et claire pour planifier l'arrêt de l'ordinateur."
+"Planificateur d'arrêt est un programme extrêmement simple utilisé pour "
+"éteindre l'ordinateur à une date et une heure spécifique. Il fournit une "
+"interface simple et claire pour planifier l'arrêt de l'ordinateur."
 
 #: data/com.github.bcedu.shutdownscheduler.appdata.xml.in:13
 #: data/com.github.bcedu.shutdownscheduler.appdata.xml.in:72
 msgid "Choose the specific time when you want to shutdown your computer"
-msgstr "Choisissez le moment précis auquel vous voulez éteindre votre ordinateur"
+msgstr ""
+"Choisissez le moment précis auquel vous voulez éteindre votre ordinateur"
 
 #: data/com.github.bcedu.shutdownscheduler.appdata.xml.in:14
 #: data/com.github.bcedu.shutdownscheduler.appdata.xml.in:73
@@ -67,7 +68,7 @@ msgid "Fast access buttons to add time"
 msgstr "Boutons d'accès rapide pour ajouter du temps"
 
 #: data/com.github.bcedu.shutdownscheduler.appdata.xml.in:15
-msgid "Customize the fast acces buttons with your own times"
+msgid "Customize the fast access buttons with your own times"
 msgstr "Personnalisation des boutons d'accès rapide avec vos propres durées"
 
 #: data/com.github.bcedu.shutdownscheduler.appdata.xml.in:16
@@ -76,8 +77,8 @@ msgid ""
 "Watch the remaining time at any time in the program, or just make a fast "
 "look to the progress bar of the icon"
 msgstr ""
-"Visualisez le temps restant à tout moment dans l'application, où jetez un coup "
-"d'oeil à la barre de progression de l'icône"
+"Visualisez le temps restant à tout moment dans l'application, où jetez un "
+"coup d'oeil à la barre de progression de l'icône"
 
 #: data/com.github.bcedu.shutdownscheduler.appdata.xml.in:17
 #: data/com.github.bcedu.shutdownscheduler.appdata.xml.in:75
@@ -86,7 +87,8 @@ msgstr "Annulez l'arrêt planifié avec un simple bouton"
 
 #: data/com.github.bcedu.shutdownscheduler.appdata.xml.in:44
 msgid "Don't reset config file when app is started"
-msgstr "Ne réinitialise pas le fichier de configuration au démarrage de l'application"
+msgstr ""
+"Ne réinitialise pas le fichier de configuration au démarrage de l'application"
 
 #: data/com.github.bcedu.shutdownscheduler.appdata.xml.in:49
 msgid "Juno release"
@@ -98,12 +100,14 @@ msgid "Update release"
 msgstr "Version mise à jour"
 
 #: data/com.github.bcedu.shutdownscheduler.appdata.xml.in:56
-msgid "Allow customize fas acces buttons"
+msgid "Allow customize fast access buttons"
 msgstr "Personnalisation des boutons d'accès rapide"
 
 #: data/com.github.bcedu.shutdownscheduler.appdata.xml.in:64
-msgid "Change the fast acces button \"2 h.\" for \"5 min.\""
-msgstr "Passage de la valeur par défaut d'un bouton d'accès rapide de « 2h » à « 5min »"
+msgid "Change the fast access button \"2 h.\" for \"5 min.\""
+msgstr ""
+"Passage de la valeur par défaut d'un bouton d'accès rapide de « 2h » à « "
+"5min »"
 
 #: data/com.github.bcedu.shutdownscheduler.appdata.xml.in:70
 msgid "Initial release"

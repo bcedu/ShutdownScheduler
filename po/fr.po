@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: com.github.bcedu.shutdownscheduler\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-04-16 18:18+0200\n"
+"POT-Creation-Date: 2019-04-16 18:40+0200\n"
 "PO-Revision-Date: 2019-04-15 20:42+0200\n"
 "Last-Translator: NathanBnm\n"
 "Language-Team: Français\n"
@@ -22,7 +22,7 @@ msgid "Shutdown Scheduler"
 msgstr "Planificateur d'arrêt"
 
 #: src/ShutdownScheduler.vala:186
-msgid "Fast acces buttons"
+msgid "Fast access buttons"
 msgstr "Boutons d'accès rapide"
 
 #: src/ShutdownScheduler.vala:205
@@ -61,12 +61,12 @@ msgstr "Annuler"
 
 #: src/ShutdownScheduler.vala:440 src/ShutdownScheduler.vala:458
 #: src/ShutdownScheduler.vala:476 src/ShutdownScheduler.vala:494
-msgid "min."
+msgid " min."
 msgstr "min"
 
 #: src/ShutdownScheduler.vala:443 src/ShutdownScheduler.vala:461
 #: src/ShutdownScheduler.vala:479 src/ShutdownScheduler.vala:497
-msgid "h."
+msgid " h."
 msgstr "h"
 
 #: src/ShutdownScheduler.vala:524

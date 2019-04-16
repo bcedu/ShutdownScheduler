@@ -183,7 +183,7 @@
             vbox.margin = 10;
 
             // Section text
-            Gtk.Label lb = new Gtk.Label(_("Fast acces buttons"));
+            Gtk.Label lb = new Gtk.Label(_("Fast access buttons"));
             lb.get_style_context().add_class ("conf_btn_label");
             Gtk.Box hbox = new Gtk.Box(Gtk.Orientation.HORIZONTAL, 1);
             hbox.pack_start(lb, true, true, 0);
@@ -437,10 +437,10 @@
             try {
                 info = reader.read_line(null);
                 if (info.split(";")[1] == "m") {
-                    btext = info.split(";")[0] + " " + _("min.");
+                    btext = info.split(";")[0] + _(" min.");
                     btime1 = int.parse(info.split(";")[0]);
                 }else {
-                    btext = info.split(";")[0] + " " + _("h.");
+                    btext = info.split(";")[0] + _(" h.");
                     btime1 = int.parse(info.split(";")[0]) * 60;
                 }
             } catch (Error e) {
@@ -455,10 +455,10 @@
             try {
                 info = reader.read_line(null);
                 if (info.split(";")[1] == "m") {
-                    btext = info.split(";")[0] + " " + _("min.");
+                    btext = info.split(";")[0] + _(" min.");
                     btime2 = int.parse(info.split(";")[0]);
                 }else {
-                    btext = info.split(";")[0] + " " + _("h.");
+                    btext = info.split(";")[0] + _(" h.");
                     btime2 = int.parse(info.split(";")[0]) * 60;
                 }
             } catch (Error e) {
@@ -473,10 +473,10 @@
             try {
                 info = reader.read_line(null);
                 if (info.split(";")[1] == "m") {
-                    btext = info.split(";")[0] + " " + _("min.");
+                    btext = info.split(";")[0] + _(" min.");
                     btime3 = int.parse(info.split(";")[0]);
                 }else {
-                    btext = info.split(";")[0] + " " + _("h.");
+                    btext = info.split(";")[0] + _(" h.");
                     btime3 = int.parse(info.split(";")[0]) * 60;
                 }
             } catch (Error e) {
@@ -491,10 +491,10 @@
             try {
                 info = reader.read_line(null);
                 if (info.split(";")[1] == "m") {
-                    btext = info.split(";")[0] + " " + _("min.");
+                    btext = info.split(";")[0] + _(" min.");
                     btime4 = int.parse(info.split(";")[0]);
                 }else {
-                    btext = info.split(";")[0] + " " + _("h.");
+                    btext = info.split(";")[0] + _(" h.");
                     btime4 = int.parse(info.split(";")[0]) * 60;
                 }
             } catch (Error e) {

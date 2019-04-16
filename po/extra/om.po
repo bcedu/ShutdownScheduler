@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: extra\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-04-15 20:42+0200\n"
+"POT-Creation-Date: 2019-04-16 18:40+0200\n"
 "PO-Revision-Date: 2019-04-15 20:42+0200\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -63,7 +63,7 @@ msgid "Fast access buttons to add time"
 msgstr ""
 
 #: data/com.github.bcedu.shutdownscheduler.appdata.xml.in:15
-msgid "Customize the fast acces buttons with your own times"
+msgid "Customize the fast access buttons with your own times"
 msgstr ""
 
 #: data/com.github.bcedu.shutdownscheduler.appdata.xml.in:16
@@ -92,11 +92,11 @@ msgid "Update release"
 msgstr ""
 
 #: data/com.github.bcedu.shutdownscheduler.appdata.xml.in:56
-msgid "Allow customize fas acces buttons"
+msgid "Allow customize fast access buttons"
 msgstr ""
 
 #: data/com.github.bcedu.shutdownscheduler.appdata.xml.in:64
-msgid "Change the fast acces button \"2 h.\" for \"5 min.\""
+msgid "Change the fast access button \"2 h.\" for \"5 min.\""
 msgstr ""
 
 #: data/com.github.bcedu.shutdownscheduler.appdata.xml.in:70
