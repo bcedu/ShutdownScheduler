@@ -11,63 +11,46 @@
         </ul>
         
 <p float="left">
-  <img src="/data/init_window.png" width="49%" />
-  <img src="/data/final_window.png" width="49%" /> 
+  <img src="/data/init_window.png" width="49%"/>
+  <img src="/data/final_window.png" width="49%"/>
 </p>
      
         
 
+
 ## Installation
 
-### Install .deb file
+### Elementary AppCenter
 
-Check out the [last release](https://github.com/bcedu/ShutdownScheduler/releases/tag/v1.2.1) to download and install the .deb file with your favourite program or by typing:
-
-`dpkg -i filename.deb`
-
-### Elementary App Store
-
-Download Shutdown Scheduler through the elementary app store. It's always updated to lastest version.
+Install VServer through the elementary AppCenter. It's always updated to lastest version.
 Easy and fast.
 
+<p align="center">
+  <a href="https://appcenter.elementary.io/com.github.bcedu.shutdownscheduler"><img src="https://appcenter.elementary.io/badge.svg" alt="Get it on AppCenter" /></a>
+</p>
+
+
+
 ### Manual Instalation
+
+You will need the following packages, that can be installed through apt:
+- gobject-2.0
+- glib-2.0
+- gtk+-3.0
+- granite
+- gee-0.8
+- unity
 
 Download last release (zip file), extract files and enter to the folder where they where extracted.
 
 Install your application with the following commands:
-- mkdir build
+- meson build --prefix=/usr
 - cd build
-- cmake -DCMAKE_INSTALL_PREFIX=/usr ../
-- make
-- sudo make install
+- ninja
+- sudo ninja install
 
 DO NOT DELETE FILES AFTER MANUAL INSTALLATION, THEY ARE NEEDED DURING UNINSTALL PROCESS
 
-### Python Script
+To uninstall type from de build folder:
+- sudo ninja uninstall
 
-Download last release (zip file), extract files and enter to the folder where they where extracted. Then, run the script "cmake_installer.py" from its original location. It must be run as sudo:
-
-- sudo python3 cmake_installer.py
-
-This script simply does the same that you would have done in manual installation. So we give the same advice:
-
-DO NOT DELETE FILES AFTER INSTALLATION, THEY ARE NEEDED DURING UNINSTALL PROCESS
-
-## Uninstall
-
-### Uninstall with dpkg
-
-If you installed the program with the .deb file or through the elementary os store you can unsintall it with the following command:
-
-`dpkg -r com.github.bcedu.shutdownscheduler`
-
-### Elementary App Store
-
-Just go to store and click on uninstall :)
-
-### Manual Uninstall
-
-To uninstall your application, run the script "cmake_uninstaller.py" (in the folder where files where originally extracted for manual installation).
-
-It must be run as sudo:
-- sudo python3 cmake_uninstaller.py
