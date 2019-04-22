@@ -1,6 +1,7 @@
+#Translate and install our .desktop file
 desktop_file = i18n.merge_file(
-  input: 'com.github.bcedu.shutdownscheduler.desktop.in',
-  output: 'com.github.bcedu.shutdownscheduler.desktop',
+  input: join_paths(meson.project_name() + '.desktop.in'),
+  output: join_paths(meson.project_name() + '.desktop'),
   type: 'desktop',
   po_dir: '../po',
   install: true,
@@ -14,12 +15,13 @@ if desktop_utils.found()
   )
 endif
 
+#Translate and install our .appdata file
 appstream_file = i18n.merge_file(
-  input: 'com.github.bcedu.shutdownscheduler.appdata.xml.in',
-  output: 'com.github.bcedu.shutdownscheduler.appdata.xml',
+  input: join_paths(meson.project_name() + '.appdata.xml.in'),
+  output: join_paths(meson.project_name() + '.appdata.xml'),
   po_dir: '../po',
   install: true,
-  install_dir: join_paths(get_option('datadir'), 'appdata')
+  install_dir: join_paths(get_option('datadir'), 'metainfo')
 )
 
 appstream_util = find_program('appstream-util', required: false)
@@ -29,6 +31,7 @@ if appstream_util.found()
   )
 endif
 
+# Compile and install options stored in gshecma
 install_data('com.github.bcedu.shutdownscheduler.gschema.xml',
   install_dir: join_paths(get_option('datadir'), 'glib-2.0/schemas')
 )
@@ -40,8 +43,19 @@ if compile_schemas.found()
   )
 endif
 
+# Install files listed in gresources
 gnome = import('gnome')
 gresources = gnome.compile_resources(
 	'shutdownscheduler-resources', 'resources/shutdownscheduler.gresource.xml', 
 	c_name: 'shutdownscheduler'
+)
+
+#Install icons
+install_data(
+    join_paths('icons', meson.project_name() + '.svg'),
+    install_dir: join_paths(get_option('datadir'), 'icons', 'hicolor')
+)
+install_data(
+    join_paths('icons', meson.project_name() + '.svg'),
+    install_dir: join_paths(get_option('datadir'), 'icons', 'hicolor', 'scalable', 'apps')
 )
