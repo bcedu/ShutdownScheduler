@@ -5,7 +5,7 @@
         <ul>
             <li>Choose the specific time when you want to shutdown your computer</li>
             <li>Fast access buttons to add time</li>
-            <li>Customize the fast acces buttons with your own times</li>
+            <li>Customize the fast access buttons with your own times</li>
             <li>Watch the remaining time at any time in the program, or just make a fast look to the progress bar of the icon</li>
             <li>Cancel the scheduled shutdown with just a button</li>
         </ul>

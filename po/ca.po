@@ -63,7 +63,7 @@ msgid "Fast access buttons to add time"
 msgstr "Botons per afegir temps a l'hora d'apagada"
 
 #: data/com.github.bcedu.shutdownscheduler.appdata.xml.in:15
-msgid "Customize the fast acces buttons with your own times"
+msgid "Customize the fast access buttons with your own times"
 msgstr "Personalitza els botons per afegir temps"
 
 #: data/com.github.bcedu.shutdownscheduler.appdata.xml.in:16
@@ -93,11 +93,11 @@ msgid "Update release"
 msgstr "Update release"
 
 #: data/com.github.bcedu.shutdownscheduler.appdata.xml.in:56
-msgid "Allow customize fas acces buttons"
+msgid "Allow customize fas access buttons"
 msgstr "Permet personaitzar els botons per afegir temps"
 
 #: data/com.github.bcedu.shutdownscheduler.appdata.xml.in:64
-msgid "Change the fast acces button \"2 h.\" for \"5 min.\""
+msgid "Change the fast access button \"2 h.\" for \"5 min.\""
 msgstr "Canvia el valor per defecte dels botó de 2h a 5min"
 
 #: data/com.github.bcedu.shutdownscheduler.appdata.xml.in:70
@@ -150,7 +150,7 @@ msgid "Save"
 msgstr "Guardar"
 
 #: src/views/view_conf.vala:91
-msgid "Fast acces buttons"
+msgid "Fast access buttons"
 msgstr "Botons d'accés ràpid"
 
 #: src/views/view_conf.vala:116

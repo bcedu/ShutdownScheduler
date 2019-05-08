@@ -88,7 +88,7 @@ namespace App.Views {
             vbox.margin = 10;
 
             // Section text
-            Gtk.Label lb = new Gtk.Label(_("Fast acces buttons"));
+            Gtk.Label lb = new Gtk.Label(_("Fast access buttons"));
             lb.get_style_context().add_class ("conf_btn_label");
             Gtk.Box hbox = new Gtk.Box(Gtk.Orientation.HORIZONTAL, 1);
             hbox.pack_start(lb, true, true, 0);
