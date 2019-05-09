@@ -23,6 +23,7 @@ namespace App.Views {
 
         public ViewConf (AppController controler) {
             conf_button = new Gtk.Button.from_icon_name ("open-menu-symbolic", Gtk.IconSize.BUTTON);
+            conf_button.tooltip_text = _("Fast access buttons");
             controler.window.headerbar.pack_end(conf_button);
             this.pack_start (get_time_buttons_confbox(controler), true, true, 10);
             this.show_all();
