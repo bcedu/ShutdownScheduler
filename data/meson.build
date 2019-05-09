@@ -1,11 +1,11 @@
 #Translate and install our .desktop file
 desktop_file = i18n.merge_file(
-  input: join_paths(meson.project_name() + '.desktop.in'),
-  output: join_paths(meson.project_name() + '.desktop'),
-  type: 'desktop',
-  po_dir: '../po',
-  install: true,
-  install_dir: join_paths(get_option('datadir'), 'applications')
+    input: meson.project_name() + '.desktop.in',
+    output: meson.project_name() + '.desktop',
+    po_dir: join_paths(meson.source_root(), 'po', 'extra'),
+    type: 'desktop',
+    install: true,
+    install_dir: join_paths(get_option('datadir'), 'applications')
 )
 
 desktop_utils = find_program('desktop-file-validate', required: false)
@@ -17,11 +17,11 @@ endif
 
 #Translate and install our .appdata file
 appstream_file = i18n.merge_file(
-  input: join_paths(meson.project_name() + '.appdata.xml.in'),
-  output: join_paths(meson.project_name() + '.appdata.xml'),
-  po_dir: '../po',
-  install: true,
-  install_dir: join_paths(get_option('datadir'), 'metainfo')
+    input: meson.project_name() + '.appdata.xml.in',
+    output: meson.project_name() + '.appdata.xml',
+    po_dir: join_paths(meson.source_root(), 'po', 'extra'),
+    install: true,
+    install_dir: join_paths(get_option('datadir'), 'metainfo')
 )
 
 appstream_util = find_program('appstream-util', required: false)
