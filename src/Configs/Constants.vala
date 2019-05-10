@@ -27,7 +27,7 @@ namespace App.Configs {
     public class Constants {
         public abstract const string ID = "com.github.bcedu.shutdownscheduler";
         public abstract const string APP_ICON = "com.github.bcedu.shutdownscheduler";
-        public abstract const string APP_NAME = "Shutdown Scheduler";
+        public abstract const string APP_NAME = (_("Shutdown Scheduler"));
         public abstract const string LAUNCHER_ID = "com.github.bcedu.shutdownscheduler.desktop";
     }
 }

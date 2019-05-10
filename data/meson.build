@@ -50,7 +50,7 @@ if appstream_util.found()
   )
 endif
 
-# Compile and install options stored in gschema
+#Compile and install options stored in gschema
 install_data('com.github.bcedu.shutdownscheduler.gschema.xml',
   install_dir: join_paths(get_option('datadir'), 'glib-2.0/schemas')
 )
@@ -61,10 +61,3 @@ if compile_schemas.found()
     args: ['--strict', '--dry-run', meson.current_source_dir()]
   )
 endif
-
-# Install files listed in gresources
-gnome = import('gnome')
-gresources = gnome.compile_resources(
-	'shutdownscheduler-resources', 'resources/shutdownscheduler.gresource.xml', 
-	c_name: 'shutdownscheduler'
-)
