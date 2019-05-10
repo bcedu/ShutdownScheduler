@@ -95,6 +95,7 @@ namespace App.Views {
             hbox.pack_start(lb, true, true, 0);
             // Reset buttons button
             Gtk.Button btn = new Gtk.Button.from_icon_name ("gtk-refresh", Gtk.IconSize.BUTTON);
+            btn.tooltip_text = _("Reset");
             btn.get_style_context().add_class ("conf_btn_reset");
             btn.set_border_width(0);
             btn.clicked.connect(() => {
