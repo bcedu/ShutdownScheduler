@@ -43,13 +43,6 @@ if compile_schemas.found()
   )
 endif
 
-# Install files listed in gresources
-gnome = import('gnome')
-gresources = gnome.compile_resources(
-	'shutdownscheduler-resources', 'resources/shutdownscheduler.gresource.xml', 
-	c_name: 'shutdownscheduler'
-)
-
 #Install icons
 install_data(
     join_paths('icons', meson.project_name() + '.svg'),

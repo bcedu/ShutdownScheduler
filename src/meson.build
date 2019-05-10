@@ -1,21 +1,18 @@
-
 srcs = files([
-    'configs/constants.vala',
-    'configs/settings.vala',
-    'widgets/header_bar.vala',
-    'widgets/add_time_button.vala',
-    'views/app_view.vala',
-    'views/view1.vala',
-    'views/view2.vala',
-    'views/view_conf.vala',
-    'controllers/view_controller.vala',
-    'controllers/app_controller.vala',
-    'application.vala',
-    'window.vala',
-    'main.vala'
+    'Configs/Constants.vala',
+    'Configs/Settings.vala',
+    'Widgets/HeaderBar.vala',
+    'Widgets/AddTimeButton.vala',
+    'Views/AppView.vala',
+    'Views/View1.vala',
+    'Views/View2.vala',
+    'Views/ViewConf.vala',
+    'Controllers/ViewController.vala',
+    'Controllers/AppController.vala',
+    'Application.vala',
+    'Window.vala',
+    'Main.vala'
 ])
-
-srcs += gresources
 
 # Dependences
 deps = [
@@ -32,6 +29,7 @@ deps = [
 executable(
     meson.project_name(),
     srcs,
+    asresources,
     dependencies: deps,
     install: true
 )
