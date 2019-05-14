@@ -95,13 +95,13 @@ namespace App.Controllers {
             File f = File.new_for_path (this.get_conf_file());
             try {
 	            f.delete ();
+                f.create(FileCreateFlags.NONE);
+                DataOutputStream writer = new DataOutputStream (f.replace (null, false, FileCreateFlags.NONE));
+                foreach (AddTimeButton btn in add_time_buttons) {
+                    writer.put_string("%d;%s\n".printf (btn.time, btn.units));
+                }
             } catch (Error e) {
 	            print ("Error: %s\n", e.message);
-            }
-            f.create(FileCreateFlags.NONE);
-            DataOutputStream writer = new DataOutputStream (f.replace (null, false, FileCreateFlags.NONE));
-            foreach (AddTimeButton btn in add_time_buttons) {
-                writer.put_string("%d;%s\n".printf (btn.time, btn.units));
             }
         }
 

@@ -6,7 +6,6 @@ namespace App.Views {
 
         private Gtk.Label remaining_time_lbl;
         private Button cancel_button;
-        private Button conf_button;
 
         public View2 (AppController controler) {
             this.remaining_time_lbl = new Label(_("No shutdown programed"));
