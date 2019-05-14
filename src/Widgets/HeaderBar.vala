@@ -40,6 +40,7 @@ namespace App.Widgets {
             this.set_title (Constants.APP_NAME);
             if (flat_style) this.get_style_context ().add_class (Gtk.STYLE_CLASS_FLAT);
             this.show_close_button = true;
+            this.has_subtitle = false;
             this.get_style_context ().add_class (Gtk.STYLE_CLASS_FLAT);
             // Create and config back_button
             back_button = new Gtk.Button ();
