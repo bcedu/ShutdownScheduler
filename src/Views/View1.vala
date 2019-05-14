@@ -24,7 +24,9 @@ namespace App.Views {
             Gtk.Box box = new Gtk.Box(Gtk.Orientation.HORIZONTAL, 0);
             box.get_style_context().add_class ("boxprogramer");
             this.date = new Granite.Widgets.DatePicker();
+            this.date.tooltip_text = _("Choose Date");
             this.time = new Granite.Widgets.TimePicker();
+            this.time.tooltip_text = _("Choose Time");
             this.date.get_style_context().add_class ("timewidget1");
             this.time.get_style_context().add_class ("timewidget2");
             box.pack_start (this.date, true, true, 10);

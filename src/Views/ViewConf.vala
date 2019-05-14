@@ -23,6 +23,7 @@ namespace App.Views {
 
         public ViewConf (AppController controler) {
             conf_button = new Gtk.Button.from_icon_name ("open-menu-symbolic", Gtk.IconSize.BUTTON);
+            conf_button.tooltip_text = _("Fast access buttons");
             controler.window.headerbar.pack_end(conf_button);
             this.pack_start (get_time_buttons_confbox(controler), true, true, 10);
             this.show_all();
@@ -94,6 +95,7 @@ namespace App.Views {
             hbox.pack_start(lb, true, true, 0);
             // Reset buttons button
             Gtk.Button btn = new Gtk.Button.from_icon_name ("gtk-refresh", Gtk.IconSize.BUTTON);
+            btn.tooltip_text = _("Reset");
             btn.get_style_context().add_class ("conf_btn_reset");
             btn.set_border_width(0);
             btn.clicked.connect(() => {
