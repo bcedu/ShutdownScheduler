@@ -50,32 +50,34 @@ namespace App.Views {
                 string st;
                 sv = int.parse(entry1.get_text());
                 st = types1.get_active_text();
-                if (st == "minutes") st = "m";
-                else st = "h";
+                print(st);
+                print("\n");
+                if (st.get_char (0) == 'h') st = "h";
+                else st = "m";
                 add_time_buttons.add (
                     new AddTimeButton(sv, st)
                 );
 
                 sv = int.parse(entry2.get_text());
                 st = types2.get_active_text();
-                if (st == "minutes") st = "m";
-                else st = "h";
+                if (st.get_char (0) == 'h') st = "h";
+                else st = "m";
                 add_time_buttons.add (
                     new AddTimeButton(sv, st)
                 );
 
                 sv = int.parse(entry3.get_text());
                 st = types3.get_active_text();
-                if (st == "minutes") st = "m";
-                else st = "h";
+                if (st.get_char (0) == 'h') st = "h";
+                else st = "m";
                 add_time_buttons.add (
                     new AddTimeButton(sv, st)
                 );
 
                 sv = int.parse(entry4.get_text());
                 st = types4.get_active_text();
-                if (st == "minutes") st = "m";
-                else st = "h";
+                if (st.get_char (0) == 'h') st = "h";
+                else st = "m";
                 add_time_buttons.add (
                     new AddTimeButton(sv, st)
                 );
