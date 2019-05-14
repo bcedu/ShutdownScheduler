@@ -70,12 +70,8 @@ namespace App {
         private void init_css() {
             // Load CSS
             var provider = new Gtk.CssProvider();
-            try {
-                provider.load_from_resource("/com/github/bcedu/resources/com.github.bcedu.shutdownscheduler.css");
-                Gtk.StyleContext.add_provider_for_screen(Gdk.Screen.get_default(), provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
-            } catch (Error e) {
-                stderr.printf("\nError: %s\n", e.message);
-            }
+            provider.load_from_resource("/com/github/bcedu/resources/com.github.bcedu.shutdownscheduler.css");
+            Gtk.StyleContext.add_provider_for_screen(Gdk.Screen.get_default(), provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
         }
 
         private void load_window_state() {

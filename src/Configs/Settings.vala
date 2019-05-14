@@ -10,12 +10,12 @@ namespace App.Configs {
 
         private static AppSettings _settings;
 
-        public static unowned AppSettings get_default () throws Error {
+        public static unowned AppSettings get_default () {
             if (_settings == null) _settings = new AppSettings ();
             return _settings;
         }
 
-        private AppSettings () throws Error {
+        private AppSettings () {
             base ("com.github.bcedu.shutdownscheduler.settings");
         }
     }
