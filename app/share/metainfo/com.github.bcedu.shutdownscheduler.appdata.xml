@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Copyright 2017 Eduard Berloso Clarà <eduard.bc.95@gmail.com> -->
+<component type="desktop">
+  <id>com.github.bcedu.shutdownscheduler</id>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>GPL-3.0+</project_license>
+  <developer_name>Eduard Berloso Clarà</developer_name>
+  <developer_name xml:lang="fr">Eduard Berloso Clarà</developer_name>
+  <developer_name xml:lang="en_GB">Eduard Berloso Clarà</developer_name>
+  <developer_name xml:lang="en_CA">Eduard Berloso Clarà</developer_name>
+  <developer_name xml:lang="en_AU">Eduard Berloso Clarà</developer_name>
+  <developer_name xml:lang="ca">Eduard Berloso Clarà</developer_name>
+  <name>Shutdown Scheduler</name>
+  <name xml:lang="fr">Planificateur d'arrêt</name>
+  <name xml:lang="en_GB">Shutdown Scheduler</name>
+  <name xml:lang="en_CA">Shutdown Scheduler</name>
+  <name xml:lang="en_AU">Shutdown Scheduler</name>
+  <name xml:lang="ca">Shutdown Scheduler</name>
+  <summary>Schedule your computer's shutdown easily</summary>
+  <summary xml:lang="fr">Planifiez facilement l'arrêt de votre ordinateur</summary>
+  <summary xml:lang="en_GB">Schedule your computer's shutdown easily</summary>
+  <summary xml:lang="en_CA">Schedule your computer's shutdown easily</summary>
+  <summary xml:lang="en_AU">Schedule your computer's shutdown easily</summary>
+  <summary xml:lang="ca">Programa quan vols que s'apagui el teu ordinador facilment.</summary>
+  <description>
+    <p>ShutdownSheduler is an extremely simple program used to shutdown the computer in a specific date time. It provides a simple and clear interface to shedule the shutdown.</p>
+    <p xml:lang="fr">Planificateur d'arrêt est un programme extrêmement simple utilisé pour éteindre l'ordinateur à une date et une heure spécifique. Il fournit une interface simple et claire pour planifier l'arrêt de l'ordinateur.</p>
+    <p xml:lang="en_GB">ShutdownSheduler is an extremely simple program used to shutdown the computer in a specific date time. It provides a simple and clear interface to shedule the shutdown.</p>
+    <p xml:lang="en_CA">ShutdownSheduler is an extremely simple program used to shutdown the computer in a specific date time. It provides a simple and clear interface to shedule the shutdown.</p>
+    <p xml:lang="en_AU">ShutdownSheduler is an extremely simple program used to shutdown the computer in a specific date time. It provides a simple and clear interface to shedule the shutdown.</p>
+    <p xml:lang="ca">ShutdownSheduler es un senzill programa utilitzat per apagar l'ordinador en una hora especifica. Proporciona una interficie senzilla per programar quan es vol apagar l'ordinador.</p>
+    <ul>
+      <li>Choose the specific time when you want to shutdown your computer</li>
+      <li xml:lang="fr">Choisissez le moment précis auquel vous voulez éteindre votre ordinateur</li>
+      <li xml:lang="en_GB">Choose the specific time when you want to shutdown your computer</li>
+      <li xml:lang="en_CA">Choose the specific time when you want to shutdown your computer</li>
+      <li xml:lang="en_AU">Choose the specific time when you want to shutdown your computer</li>
+      <li xml:lang="ca">Escull la data esècifica en que vols que s'apagui l'ordinaro</li>
+      <li>Fast access buttons to add time</li>
+      <li xml:lang="fr">Boutons d'accès rapide pour ajouter du temps</li>
+      <li xml:lang="en_GB">Fast access buttons to add time</li>
+      <li xml:lang="en_CA">Fast access buttons to add time</li>
+      <li xml:lang="en_AU">Fast access buttons to add time</li>
+      <li xml:lang="ca">Botons per afegir temps a l'hora d'apagada</li>
+      <li>Customize the fast access buttons with your own times</li>
+      <li xml:lang="fr">Personnalisation des boutons d'accès rapide avec vos propres durées</li>
+      <li xml:lang="en_GB">Customize the fast access buttons with your own times</li>
+      <li xml:lang="en_CA">Customize the fast access buttons with your own times</li>
+      <li xml:lang="en_AU">Customize the fast access buttons with your own times</li>
+      <li xml:lang="ca">Personalitza els botons per afegir temps</li>
+      <li>Watch the remaining time at any time in the program, or just make a fast look to the progress bar of the icon</li>
+      <li xml:lang="fr">Visualisez le temps restant à tout moment dans l'application, où jetez un coup d'oeil à la barre de progression de l'icône</li>
+      <li xml:lang="en_GB">Watch the remaining time at any time in the program, or just make a fast look to the progress bar of the icon</li>
+      <li xml:lang="en_CA">Watch the remaining time at any time in the program, or just make a fast look to the progress bar of the icon</li>
+      <li xml:lang="en_AU">Watch the remaining time at any time in the program, or just make a fast look to the progress bar of the icon</li>
+      <li xml:lang="ca">Visualitza quan de temps falta per apagar l'ordinador desde la app, o senzillament revisa ràpidament la barra de progrés de la icona</li>
+      <li>Cancel the scheduled shutdown with just a button</li>
+      <li xml:lang="fr">Annulez l'arrêt planifié avec un simple bouton</li>
+      <li xml:lang="en_GB">Cancel the scheduled shutdown with just a button</li>
+      <li xml:lang="en_CA">Cancel the scheduled shutdown with just a button</li>
+      <li xml:lang="en_AU">Cancel the scheduled shutdown with just a button</li>
+      <li xml:lang="ca">Cancela l'apagada programada amb un simple botó</li>
+    </ul>
+  </description>
+  <categories>
+    <category>System</category>
+    <category>Utility</category>
+  </categories>
+  <screenshots>
+    <screenshot type="default">
+      <image>https://raw.githubusercontent.com/bcedu/ShutdownScheduler/master/data/init_window.png</image>
+    </screenshot>
+    <screenshot type="default">
+      <image>https://raw.githubusercontent.com/bcedu/ShutdownScheduler/master/data/final_window.png</image>
+    </screenshot>
+    <screenshot type="default">
+      <image>https://raw.githubusercontent.com/bcedu/ShutdownScheduler/master/data/conf_window.png</image>
+    </screenshot>
+  </screenshots>
+  <provides>
+    <binary>com.github.bcedu.shutdownscheduler</binary>
+  </provides>
+  <url type="homepage">https://github.com/bcedu/ShutdownScheduler</url>
+  <url type="bugtracker">https://github.com/bcedu/ShutdownScheduler/issues</url>
+  <url type="help">https://github.com/bcedu/ShutdownScheduler/issues</url>
+  <releases><release version="1.4.0" date="2019-04-21">
+    ​      <description>
+    ​        <p>App rewriten from scratch</p><p xml:lang="fr">Réécriture de l'application à partir de zéro</p><p xml:lang="en_GB">App rewriten from scratch</p><p xml:lang="en_CA">App rewriten from scratch</p><p xml:lang="en_AU">App rewriten from scratch</p>
+            <ul><li>The window is now resisable</li><li xml:lang="fr">La fenêtre est désormais redimensionnable</li><li xml:lang="en_GB">The window is now resisable</li><li xml:lang="en_CA">The window is now resisable</li><li xml:lang="en_AU">The window is now resisable</li><li>The app remembers the size and the position of the window when it's reopened</li><li xml:lang="fr">L'application enregistre la taille et la position de la fenêtre et la restaure à la réouverture</li><li xml:lang="en_GB">The app remembers the size and the position of the window when it's reopened</li><li xml:lang="en_CA">The app remembers the size and the position of the window when it's reopened</li><li xml:lang="en_AU">The app remembers the size and the position of the window when it's reopened</li><li>The app is now translatable</li><li xml:lang="fr">L'application peut maintenant être traduite</li><li xml:lang="en_GB">The app is now translatable</li><li xml:lang="en_CA">The app is now translatable</li><li xml:lang="en_AU">The app is now translatable</li><li>Catalan translations has benn added</li><li xml:lang="fr">Les traductions en Catalan ont été ajoutées</li><li xml:lang="en_GB">Catalan translations has benn added</li><li xml:lang="en_CA">Catalan translations has benn added</li><li xml:lang="en_AU">Catalan translations has benn added</li><li>The configuration popover is now a new view of the app that can be accessed at any moment with the configuration button from the top-right corner.</li><li xml:lang="fr">Le menu volant de configuration est désormais une vue de l'application à laquelle on peut accéder à tout moment avec le bouton de configuration dans le coin supérieur droit.</li><li xml:lang="en_GB">The configuration popover is now a new view of the app that can be accessed at any moment with the configuration button from the top-right corner.</li><li xml:lang="en_CA">The configuration popover is now a new view of the app that can be accessed at any moment with the configuration button from the top-right corner.</li><li xml:lang="en_AU">The configuration popover is now a new view of the app that can be accessed at any moment with the configuration button from the top-right corner.</li></ul>
+    ​      </description>
+    ​    </release><release version="1.3.2" date="2018-11-30">
+    ​      <description>
+    ​        <p>Don't reset config file when app is started</p><p xml:lang="fr">Ne réinitialise pas le fichier de configuration au démarrage de l'application</p><p xml:lang="en_GB">Don't reset config file when app is started</p><p xml:lang="en_CA">Don't reset config file when app is started</p><p xml:lang="en_AU">Don't reset config file when app is started</p><p xml:lang="ca">No es reinicia el fitxer de configuració quan s'inicia la app</p>
+    ​      </description>
+    ​    </release><release version="1.3.0" date="2018-09-11">
+    ​      <description>
+    ​        <p>Juno release</p><p xml:lang="fr">Version pour Juno</p><p xml:lang="en_GB">Juno release</p><p xml:lang="en_CA">Juno release</p><p xml:lang="en_AU">Juno release</p><p xml:lang="ca">Juno release</p>
+    ​      </description>
+    ​    </release><release version="1.2.0" date="2018-05-13">
+    ​      <description>
+    ​        <p>Update release</p><p xml:lang="fr">Version mise à jour</p><p xml:lang="en_GB">Update release</p><p xml:lang="en_CA">Update release</p><p xml:lang="en_AU">Update release</p><p xml:lang="ca">Update release</p>
+            <ul><li>Allow customize fas access buttons</li><li xml:lang="en_GB">Allow customize fas access buttons</li><li xml:lang="en_CA">Allow customize fas access buttons</li><li xml:lang="en_AU">Allow customize fas access buttons</li><li xml:lang="ca">Permet personaitzar els botons per afegir temps</li></ul>
+    ​      </description>
+    ​    </release>
+    ​    <release version="1.1.1" date="2018-01-20">
+    ​      <description>
+    ​        <p>Update release</p><p xml:lang="fr">Version mise à jour</p><p xml:lang="en_GB">Update release</p><p xml:lang="en_CA">Update release</p><p xml:lang="en_AU">Update release</p><p xml:lang="ca">Update release</p>
+            <ul><li>Change the fast access button "2 h." for "5 min."</li><li xml:lang="fr">Passage de la valeur par défaut d'un bouton d'accès rapide de « 2h » à « 5min »</li><li xml:lang="en_GB">Change the fast access button "2 h." for "5 min."</li><li xml:lang="en_CA">Change the fast access button "2 h." for "5 min."</li><li xml:lang="en_AU">Change the fast access button "2 h." for "5 min."</li><li xml:lang="ca">Canvia el valor per defecte dels botó de 2h a 5min</li></ul>
+    ​      </description>
+    ​    </release>
+    ​    <release version="1.1.0" date="2013-04-12">
+    ​      <description>
+    ​        <p>Initial release</p><p xml:lang="fr">Version initiale</p><p xml:lang="en_GB">Initial release</p><p xml:lang="en_CA">Initial release</p><p xml:lang="en_AU">Initial release</p><p xml:lang="ca">Initial release</p>
+            <ul><li>Choose the specific time when you want to shutdown your computer</li><li xml:lang="fr">Choisissez le moment précis auquel vous voulez éteindre votre ordinateur</li><li xml:lang="en_GB">Choose the specific time when you want to shutdown your computer</li><li xml:lang="en_CA">Choose the specific time when you want to shutdown your computer</li><li xml:lang="en_AU">Choose the specific time when you want to shutdown your computer</li><li xml:lang="ca">Escull la data esècifica en que vols que s'apagui l'ordinaro</li><li>Fast access buttons to add time</li><li xml:lang="fr">Boutons d'accès rapide pour ajouter du temps</li><li xml:lang="en_GB">Fast access buttons to add time</li><li xml:lang="en_CA">Fast access buttons to add time</li><li xml:lang="en_AU">Fast access buttons to add time</li><li xml:lang="ca">Botons per afegir temps a l'hora d'apagada</li><li>Watch the remaining time at any time in the program, or just make a fast look to the progress bar of the icon</li><li xml:lang="fr">Visualisez le temps restant à tout moment dans l'application, où jetez un coup d'oeil à la barre de progression de l'icône</li><li xml:lang="en_GB">Watch the remaining time at any time in the program, or just make a fast look to the progress bar of the icon</li><li xml:lang="en_CA">Watch the remaining time at any time in the program, or just make a fast look to the progress bar of the icon</li><li xml:lang="en_AU">Watch the remaining time at any time in the program, or just make a fast look to the progress bar of the icon</li><li xml:lang="ca">Visualitza quan de temps falta per apagar l'ordinador desde la app, o senzillament revisa ràpidament la barra de progrés de la icona</li><li>Cancel the scheduled shutdown with just a button</li><li xml:lang="fr">Annulez l'arrêt planifié avec un simple bouton</li><li xml:lang="en_GB">Cancel the scheduled shutdown with just a button</li><li xml:lang="en_CA">Cancel the scheduled shutdown with just a button</li><li xml:lang="en_AU">Cancel the scheduled shutdown with just a button</li><li xml:lang="ca">Cancela l'apagada programada amb un simple botó</li></ul>
+    ​      </description>
+    ​    </release>
+    ​  </releases>
+</component>
