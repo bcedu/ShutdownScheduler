@@ -35,7 +35,9 @@ namespace App.Views {
 
         public void connect_signals(AppController controler) {
             conf_button.clicked.connect(() => {
-                controler.add_registered_view ("view3");
+                if (controler.view_controller.get_current_view ().get_id () != "view3") {
+                    controler.add_registered_view ("view3");
+                }
             });
         }
 
@@ -207,6 +209,10 @@ namespace App.Views {
                 stderr.printf(e.message);
             }
             return {time, type};
+        }
+
+        public void set_conf_button_visibility (bool visibility) {
+            conf_button.visible = visibility;
         }
 
     }
