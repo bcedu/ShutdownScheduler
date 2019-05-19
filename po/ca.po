@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: com.github.bcedu.shutdownscheduler\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-04-21 21:14+0200\n"
+"POT-Creation-Date: 2019-05-14 18:33+0200\n"
 "PO-Revision-Date: 2019-04-21 21:14+0200\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -16,165 +16,68 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: data/com.github.bcedu.shutdownscheduler.desktop.in:3
-#: data/com.github.bcedu.shutdownscheduler.appdata.xml.in:8
+#: src/Configs/Constants.vala:30
 msgid "Shutdown Scheduler"
-msgstr "Shutdown Scheduler"
-
-#: data/com.github.bcedu.shutdownscheduler.desktop.in:4
-msgid "Shutdown Scheduler App"
-msgstr "Shutdown Scheduler App"
-
-#: data/com.github.bcedu.shutdownscheduler.desktop.in:7
-msgid "com.github.bcedu.shutdownscheduler"
-msgstr "com.github.bcedu.shutdownscheduler"
-
-#: data/com.github.bcedu.shutdownscheduler.desktop.in:11
-msgid "ShutdownScheduler;"
-msgstr "ShutdownScheduler;"
-
-#: data/com.github.bcedu.shutdownscheduler.desktop.in:13
-msgid "Choose when to shutdown your computer"
-msgstr "Escull quan vols apagar el teu ordinador"
-
-#: data/com.github.bcedu.shutdownscheduler.appdata.xml.in:7
-msgid "Eduard Berloso Clarà"
-msgstr "Eduard Berloso Clarà"
-
-#: data/com.github.bcedu.shutdownscheduler.appdata.xml.in:9
-msgid "Schedule your computer's shutdown easily"
-msgstr "Programa quan vols que s'apagui el teu ordinador facilment."
-
-#: data/com.github.bcedu.shutdownscheduler.appdata.xml.in:11
-msgid ""
-"ShutdownSheduler is an extremely simple program used to shutdown the "
-"computer in a specific date time. It provides a simple and clear interface "
-"to shedule the shutdown."
-msgstr "ShutdownSheduler es un senzill programa utilitzat per apagar l'ordinador en una hora especifica. Proporciona una interficie senzilla per programar quan es vol apagar l'ordinador."
-
-#: data/com.github.bcedu.shutdownscheduler.appdata.xml.in:13
-#: data/com.github.bcedu.shutdownscheduler.appdata.xml.in:72
-msgid "Choose the specific time when you want to shutdown your computer"
-msgstr "Escull la data esècifica en que vols que s'apagui l'ordinaro"
-
-#: data/com.github.bcedu.shutdownscheduler.appdata.xml.in:14
-#: data/com.github.bcedu.shutdownscheduler.appdata.xml.in:73
-msgid "Fast access buttons to add time"
-msgstr "Botons per afegir temps a l'hora d'apagada"
-
-#: data/com.github.bcedu.shutdownscheduler.appdata.xml.in:15
-msgid "Customize the fast access buttons with your own times"
-msgstr "Personalitza els botons per afegir temps"
-
-#: data/com.github.bcedu.shutdownscheduler.appdata.xml.in:16
-#: data/com.github.bcedu.shutdownscheduler.appdata.xml.in:74
-msgid ""
-"Watch the remaining time at any time in the program, or just make a fast "
-"look to the progress bar of the icon"
 msgstr ""
-"Visualitza quan de temps falta per apagar l'ordinador desde la app, o senzillament revisa ràpidament la barra de progrés de la icona"
 
-#: data/com.github.bcedu.shutdownscheduler.appdata.xml.in:17
-#: data/com.github.bcedu.shutdownscheduler.appdata.xml.in:75
-msgid "Cancel the scheduled shutdown with just a button"
-msgstr "Cancela l'apagada programada amb un simple botó"
-
-#: data/com.github.bcedu.shutdownscheduler.appdata.xml.in:44
-msgid "Don't reset config file when app is started"
-msgstr "No es reinicia el fitxer de configuració quan s'inicia la app"
-
-#: data/com.github.bcedu.shutdownscheduler.appdata.xml.in:49
-msgid "Juno release"
-msgstr "Juno release"
-
-#: data/com.github.bcedu.shutdownscheduler.appdata.xml.in:54
-#: data/com.github.bcedu.shutdownscheduler.appdata.xml.in:62
-msgid "Update release"
-msgstr "Update release"
-
-#: data/com.github.bcedu.shutdownscheduler.appdata.xml.in:56
-msgid "Allow customize fas access buttons"
-msgstr "Permet personaitzar els botons per afegir temps"
-
-#: data/com.github.bcedu.shutdownscheduler.appdata.xml.in:64
-msgid "Change the fast access button \"2 h.\" for \"5 min.\""
-msgstr "Canvia el valor per defecte dels botó de 2h a 5min"
-
-#: data/com.github.bcedu.shutdownscheduler.appdata.xml.in:70
-msgid "Initial release"
-msgstr "Initial release"
-
-#: data/com.github.bcedu.shutdownscheduler.gschema.xml:6
-#: data/com.github.bcedu.shutdownscheduler.gschema.xml:7
-msgid "Window width"
-msgstr "Amplada de la finestra"
-
-#: data/com.github.bcedu.shutdownscheduler.gschema.xml:11
-#: data/com.github.bcedu.shutdownscheduler.gschema.xml:12
-msgid "Window height"
-msgstr "Alçada de la finestra"
-
-#: data/com.github.bcedu.shutdownscheduler.gschema.xml:16
-#: data/com.github.bcedu.shutdownscheduler.gschema.xml:17
-msgid "Window hortitzontal position"
-msgstr "Posició horitzontal de la finestra"
-
-#: data/com.github.bcedu.shutdownscheduler.gschema.xml:21
-#: data/com.github.bcedu.shutdownscheduler.gschema.xml:22
-msgid "Window vertical position"
-msgstr "Posició vertical de la finestra"
-
-#: data/com.github.bcedu.shutdownscheduler.gschema.xml:27
-#: data/com.github.bcedu.shutdownscheduler.gschema.xml:28
-msgid "The saved state of the window"
-msgstr "Estat guardat de la finestra"
-
-#: src/widgets/header_bar.vala:45
+#: src/Widgets/HeaderBar.vala:47
 msgid "Back"
 msgstr "Enrere"
 
-#: src/views/view1.vala:47
+#: src/Views/View1.vala:27
+msgid "Choose Date"
+msgstr ""
+
+#: src/Views/View1.vala:29
+msgid "Choose Time"
+msgstr ""
+
+#: src/Views/View1.vala:49
 msgid "Continue"
 msgstr "Continua"
 
-#: src/views/view2.vala:12
+#: src/Views/View2.vala:11
 msgid "No shutdown programed"
 msgstr "No hi ha cap apagada programada"
 
-#: src/views/view2.vala:14 src/views/view2.vala:34 src/views/view2.vala:47
+#: src/Views/View2.vala:13 src/Views/View2.vala:33 src/Views/View2.vala:46
 msgid "Cancel"
 msgstr "Cancel.la"
 
-#: src/views/view_conf.vala:42
-msgid "Save"
-msgstr "Guardar"
-
-#: src/views/view_conf.vala:91
+#: src/Views/ViewConf.vala:26 src/Views/ViewConf.vala:94
 msgid "Fast access buttons"
 msgstr "Botons d'accés ràpid"
 
-#: src/views/view_conf.vala:116
+#: src/Views/ViewConf.vala:43
+msgid "Save"
+msgstr "Guardar"
+
+#: src/Views/ViewConf.vala:100
+msgid "Reset"
+msgstr ""
+
+#: src/Views/ViewConf.vala:120
 msgid "Button 1"
 msgstr "Botó 1"
 
-#: src/views/view_conf.vala:123 src/views/view_conf.vala:142
-#: src/views/view_conf.vala:161 src/views/view_conf.vala:180
+#: src/Views/ViewConf.vala:127 src/Views/ViewConf.vala:146
+#: src/Views/ViewConf.vala:165 src/Views/ViewConf.vala:184
 msgid "minutes"
 msgstr "minuts"
 
-#: src/views/view_conf.vala:124 src/views/view_conf.vala:143
-#: src/views/view_conf.vala:162 src/views/view_conf.vala:181
+#: src/Views/ViewConf.vala:128 src/Views/ViewConf.vala:147
+#: src/Views/ViewConf.vala:166 src/Views/ViewConf.vala:185
 msgid "hours"
 msgstr "hores"
 
-#: src/views/view_conf.vala:135
+#: src/Views/ViewConf.vala:139
 msgid "Button 2"
 msgstr "Botó 2"
 
-#: src/views/view_conf.vala:154
+#: src/Views/ViewConf.vala:158
 msgid "Button 3"
 msgstr "Botó 3"
 
-#: src/views/view_conf.vala:173
+#: src/Views/ViewConf.vala:177
 msgid "Button 4"
 msgstr "Botó 4"

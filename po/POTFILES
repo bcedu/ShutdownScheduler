@@ -1,6 +1,3 @@
-data/com.github.bcedu.shutdownscheduler.desktop.in
-data/com.github.bcedu.shutdownscheduler.appdata.xml.in
-data/com.github.bcedu.shutdownscheduler.gschema.xml
 src/Configs/Constants.vala
 src/Configs/Settings.vala
 src/Widgets/HeaderBar.vala

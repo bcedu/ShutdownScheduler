@@ -1,0 +1,83 @@
+# Swahili translations for com.github.bcedu.shutdownscheduler package.
+# Copyright (C) 2019 THE com.github.bcedu.shutdownscheduler'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the com.github.bcedu.shutdownscheduler package.
+# Automatically generated, 2019.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: com.github.bcedu.shutdownscheduler\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-05-14 18:33+0200\n"
+"PO-Revision-Date: 2019-05-09 21:12+0200\n"
+"Last-Translator: Automatically generated\n"
+"Language-Team: none\n"
+"Language: sw\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: src/Configs/Constants.vala:30
+msgid "Shutdown Scheduler"
+msgstr ""
+
+#: src/Widgets/HeaderBar.vala:47
+msgid "Back"
+msgstr ""
+
+#: src/Views/View1.vala:27
+msgid "Choose Date"
+msgstr ""
+
+#: src/Views/View1.vala:29
+msgid "Choose Time"
+msgstr ""
+
+#: src/Views/View1.vala:49
+msgid "Continue"
+msgstr ""
+
+#: src/Views/View2.vala:11
+msgid "No shutdown programed"
+msgstr ""
+
+#: src/Views/View2.vala:13 src/Views/View2.vala:33 src/Views/View2.vala:46
+msgid "Cancel"
+msgstr ""
+
+#: src/Views/ViewConf.vala:26 src/Views/ViewConf.vala:94
+msgid "Fast access buttons"
+msgstr ""
+
+#: src/Views/ViewConf.vala:43
+msgid "Save"
+msgstr ""
+
+#: src/Views/ViewConf.vala:100
+msgid "Reset"
+msgstr ""
+
+#: src/Views/ViewConf.vala:120
+msgid "Button 1"
+msgstr ""
+
+#: src/Views/ViewConf.vala:127 src/Views/ViewConf.vala:146
+#: src/Views/ViewConf.vala:165 src/Views/ViewConf.vala:184
+msgid "minutes"
+msgstr ""
+
+#: src/Views/ViewConf.vala:128 src/Views/ViewConf.vala:147
+#: src/Views/ViewConf.vala:166 src/Views/ViewConf.vala:185
+msgid "hours"
+msgstr ""
+
+#: src/Views/ViewConf.vala:139
+msgid "Button 2"
+msgstr ""
+
+#: src/Views/ViewConf.vala:158
+msgid "Button 3"
+msgstr ""
+
+#: src/Views/ViewConf.vala:177
+msgid "Button 4"
+msgstr ""
