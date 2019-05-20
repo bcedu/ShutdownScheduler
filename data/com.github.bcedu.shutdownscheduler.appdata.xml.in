@@ -39,6 +39,20 @@
       <url type="bugtracker">https://github.com/bcedu/ShutdownScheduler/issues</url>
       <url type="help">https://github.com/bcedu/ShutdownScheduler/issues</url>
       <releases>
+        <release version="1.5.0" date="2019-04-21">
+    ​      <description>
+    ​        <p>App rewriten from scratch</p>
+            <ul>
+                <li>The window is now resisable</li>
+                <li>The app remembers the size and the position of the window when it's reopened</li>
+                <li>The app is now translatable</li>
+                <li>Catalan translations has benn added</li>
+                <li>French translations has benn added</li>
+                <li>The configuration popover is now a new view of the app that can be accessed at any moment with the configuration button from the top-right corner.</li>
+                <li>Big Fixes</li>
+            </ul>
+    ​      </description>
+    ​    </release>
         <release version="1.4.0" date="2019-04-21">
     ​      <description>
     ​        <p>App rewriten from scratch</p>
