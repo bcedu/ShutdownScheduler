@@ -50,8 +50,6 @@ namespace App.Views {
                 string st;
                 sv = int.parse(entry1.get_text());
                 st = types1.get_active_text();
-                print(st);
-                print("\n");
                 if (st.get_char (0) == 'h') st = "h";
                 else st = "m";
                 add_time_buttons.add (
