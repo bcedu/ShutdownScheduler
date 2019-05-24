@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: com.github.bcedu.shutdownscheduler\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-05-14 18:33+0200\n"
-"PO-Revision-Date: 2019-05-09 21:12+0200\n"
-"Last-Translator: Automatically generated\n"
+"PO-Revision-Date: 2019-05-24 23:12+0100\n"
+"Last-Translator: Siigdev\n"
 "Language-Team: none\n"
 "Language: da\n"
 "MIME-Version: 1.0\n"
@@ -19,66 +19,66 @@ msgstr ""
 
 #: src/Configs/Constants.vala:30
 msgid "Shutdown Scheduler"
-msgstr ""
+msgstr "Shutdown Scheduler"
 
 #: src/Widgets/HeaderBar.vala:47
 msgid "Back"
-msgstr ""
+msgstr "Tilbage"
 
 #: src/Views/View1.vala:27
 msgid "Choose Date"
-msgstr ""
+msgstr "Vælg dato"
 
 #: src/Views/View1.vala:29
 msgid "Choose Time"
-msgstr ""
+msgstr "Vælg tidspunkt"
 
 #: src/Views/View1.vala:49
 msgid "Continue"
-msgstr ""
+msgstr "Fortsæt"
 
 #: src/Views/View2.vala:11
 msgid "No shutdown programed"
-msgstr ""
+msgstr "Ingen slukning planlagt"
 
 #: src/Views/View2.vala:13 src/Views/View2.vala:33 src/Views/View2.vala:46
 msgid "Cancel"
-msgstr ""
+msgstr "Annuller"
 
 #: src/Views/ViewConf.vala:26 src/Views/ViewConf.vala:94
 msgid "Fast access buttons"
-msgstr ""
+msgstr "Hurtig adgang knapper"
 
 #: src/Views/ViewConf.vala:43
 msgid "Save"
-msgstr ""
+msgstr "Gem"
 
 #: src/Views/ViewConf.vala:100
 msgid "Reset"
-msgstr ""
+msgstr "Nulstil"
 
 #: src/Views/ViewConf.vala:120
 msgid "Button 1"
-msgstr ""
+msgstr "Knap 1"
 
 #: src/Views/ViewConf.vala:127 src/Views/ViewConf.vala:146
 #: src/Views/ViewConf.vala:165 src/Views/ViewConf.vala:184
 msgid "minutes"
-msgstr ""
+msgstr "minutter"
 
 #: src/Views/ViewConf.vala:128 src/Views/ViewConf.vala:147
 #: src/Views/ViewConf.vala:166 src/Views/ViewConf.vala:185
 msgid "hours"
-msgstr ""
+msgstr "timer"
 
 #: src/Views/ViewConf.vala:139
 msgid "Button 2"
-msgstr ""
+msgstr "Knap 2"
 
 #: src/Views/ViewConf.vala:158
 msgid "Button 3"
-msgstr ""
+msgstr "Knap 3"
 
 #: src/Views/ViewConf.vala:177
 msgid "Button 4"
-msgstr ""
+msgstr "Knap 4"

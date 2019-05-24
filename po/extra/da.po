@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: extra\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-05-14 18:34+0200\n"
-"PO-Revision-Date: 2019-05-09 21:12+0200\n"
-"Last-Translator: Automatically generated\n"
+"PO-Revision-Date: 2019-05-24 23:12+0100\n"
+"Last-Translator: Siigdev\n"
 "Language-Team: none\n"
 "Language: da\n"
 "MIME-Version: 1.0\n"
@@ -20,31 +20,31 @@ msgstr ""
 #: data/com.github.bcedu.shutdownscheduler.desktop.in:3
 #: data/com.github.bcedu.shutdownscheduler.appdata.xml.in:8
 msgid "Shutdown Scheduler"
-msgstr ""
+msgstr "Shutdown Scheduler"
 
 #: data/com.github.bcedu.shutdownscheduler.desktop.in:4
 msgid "Shutdown Scheduler App"
-msgstr ""
+msgstr "Shutdown Scheduler applikation"
 
 #: data/com.github.bcedu.shutdownscheduler.desktop.in:7
 msgid "com.github.bcedu.shutdownscheduler"
-msgstr ""
+msgstr "com.github.bcedu.shutdownscheduler"
 
 #: data/com.github.bcedu.shutdownscheduler.desktop.in:11
 msgid "ShutdownScheduler;"
-msgstr ""
+msgstr "ShutdownScheduler;"
 
 #: data/com.github.bcedu.shutdownscheduler.desktop.in:13
 msgid "Choose when to shutdown your computer"
-msgstr ""
+msgstr "Vælg hvornår du ønsker at slukke din computer"
 
 #: data/com.github.bcedu.shutdownscheduler.appdata.xml.in:7
 msgid "Eduard Berloso Clarà"
-msgstr ""
+msgstr "Eduard Berloso Clarà"
 
 #: data/com.github.bcedu.shutdownscheduler.appdata.xml.in:9
 msgid "Schedule your computer's shutdown easily"
-msgstr ""
+msgstr "Planlæg nemt hvornår din computer skal lukke ned"
 
 #: data/com.github.bcedu.shutdownscheduler.appdata.xml.in:11
 msgid ""
@@ -52,20 +52,23 @@ msgid ""
 "computer in a specific date time. It provides a simple and clear interface "
 "to shedule the shutdown."
 msgstr ""
+"ShutdownSheduler er et ekstremt simpelt program der bruges til at slukke"
+"computeren på et bestemt tidspunkt in a specific date time. Det indeholder "
+"en simpel brugerflade til at planlægge nedslukningen."
 
 #: data/com.github.bcedu.shutdownscheduler.appdata.xml.in:13
 #: data/com.github.bcedu.shutdownscheduler.appdata.xml.in:84
 msgid "Choose the specific time when you want to shutdown your computer"
-msgstr ""
+msgstr "Vælg det specifikke tidspunkt du ønsker computeren skal slukke"
 
 #: data/com.github.bcedu.shutdownscheduler.appdata.xml.in:14
 #: data/com.github.bcedu.shutdownscheduler.appdata.xml.in:85
 msgid "Fast access buttons to add time"
-msgstr ""
+msgstr "Hurtig-adgang knapper til at tilføje tid"
 
 #: data/com.github.bcedu.shutdownscheduler.appdata.xml.in:15
 msgid "Customize the fast access buttons with your own times"
-msgstr ""
+msgstr "Tilpas hurtig-adgang knapperne med dine egne tider"
 
 #: data/com.github.bcedu.shutdownscheduler.appdata.xml.in:16
 #: data/com.github.bcedu.shutdownscheduler.appdata.xml.in:86
@@ -73,60 +76,65 @@ msgid ""
 "Watch the remaining time at any time in the program, or just make a fast "
 "look to the progress bar of the icon"
 msgstr ""
+"Se den resterende tid tilbage i ethvert program, eller se det hurtigt på"
+"progress baren på ikonet"
 
 #: data/com.github.bcedu.shutdownscheduler.appdata.xml.in:17
 #: data/com.github.bcedu.shutdownscheduler.appdata.xml.in:87
 msgid "Cancel the scheduled shutdown with just a button"
-msgstr ""
+msgstr "Annuller de planlagte nedslukninger med bare en knap"
 
 #: data/com.github.bcedu.shutdownscheduler.appdata.xml.in:44
 msgid "App rewriten from scratch"
-msgstr ""
+msgstr "Applikationen omskrevet fra bunden"
 
 #: data/com.github.bcedu.shutdownscheduler.appdata.xml.in:46
 msgid "The window is now resisable"
-msgstr ""
+msgstr "Vinduet kan nu ændre størrelse"
 
 #: data/com.github.bcedu.shutdownscheduler.appdata.xml.in:47
 msgid ""
 "The app remembers the size and the position of the window when it's reopened"
 msgstr ""
+"Applikationen husker størrelsen og positionen af vinduet når den genåbnes"
 
 #: data/com.github.bcedu.shutdownscheduler.appdata.xml.in:48
 msgid "The app is now translatable"
-msgstr ""
+msgstr "Applikationen kan nu oversættes"
 
 #: data/com.github.bcedu.shutdownscheduler.appdata.xml.in:49
 msgid "Catalan translations has benn added"
-msgstr ""
+msgstr "Katalanske oversættelser er tilføjet"
 
 #: data/com.github.bcedu.shutdownscheduler.appdata.xml.in:50
 msgid ""
 "The configuration popover is now a new view of the app that can be accessed "
 "at any moment with the configuration button from the top-right corner."
 msgstr ""
+"Konfigurations popover er nu et nyt view i applikationen, der kan blive åbnet "
+"på et ethvert tidspunkt med konfigurationsknappen i øverste højre hjørne."
 
 #: data/com.github.bcedu.shutdownscheduler.appdata.xml.in:56
 msgid "Don't reset config file when app is started"
-msgstr ""
+msgstr "Nulstil ikke konfigurationsfilen når applikationen er startet"
 
 #: data/com.github.bcedu.shutdownscheduler.appdata.xml.in:61
 msgid "Juno release"
-msgstr ""
+msgstr "Juno udgivelse"
 
 #: data/com.github.bcedu.shutdownscheduler.appdata.xml.in:66
 #: data/com.github.bcedu.shutdownscheduler.appdata.xml.in:74
 msgid "Update release"
-msgstr ""
+msgstr "Opdateringsudgivelse"
 
 #: data/com.github.bcedu.shutdownscheduler.appdata.xml.in:68
 msgid "Allow customize fas access buttons"
-msgstr ""
+msgstr "Tillad tilpasning af hurtig-adgang knapperne"
 
 #: data/com.github.bcedu.shutdownscheduler.appdata.xml.in:76
 msgid "Change the fast access button \"2 h.\" for \"5 min.\""
-msgstr ""
+msgstr "Skift hurtig-adgang knapperne \"2 h.\" for \"5 min.\""
 
 #: data/com.github.bcedu.shutdownscheduler.appdata.xml.in:82
 msgid "Initial release"
-msgstr ""
+msgstr "Første udgivelse"
