@@ -86,10 +86,8 @@ namespace App.Controllers {
             }
             if (this.views_stack.size > 1) {
                 app_controller.window.headerbar.back_button.visible = true;
-                view3.set_conf_button_visibility (false);
             } else {
                 app_controller.window.headerbar.back_button.visible = false;
-                view3.set_conf_button_visibility (true);
             }
         }
 

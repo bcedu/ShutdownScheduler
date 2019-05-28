@@ -43,9 +43,12 @@ namespace App.Views {
 
         public void update_view(AppController controler) {
             controler.window.headerbar.back_button.set_label (_("Save"));
+            conf_button.visible = false;
         }
 
         public void update_view_on_hide(AppController controler) {
+                conf_button.visible = true;
+
                 ArrayList<AddTimeButton> add_time_buttons = new ArrayList<AddTimeButton>();
 
                 int sv;
@@ -209,10 +212,6 @@ namespace App.Views {
                 stderr.printf(e.message);
             }
             return {time, type};
-        }
-
-        public void set_conf_button_visibility (bool visibility) {
-            conf_button.visible = visibility;
         }
 
     }
