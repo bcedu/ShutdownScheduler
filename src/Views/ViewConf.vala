@@ -35,15 +35,20 @@ namespace App.Views {
 
         public void connect_signals(AppController controler) {
             conf_button.clicked.connect(() => {
-                controler.add_registered_view ("view3");
+                if (controler.view_controller.get_current_view ().get_id () != "view3") {
+                    controler.add_registered_view ("view3");
+                }
             });
         }
 
         public void update_view(AppController controler) {
             controler.window.headerbar.back_button.set_label (_("Save"));
+            conf_button.visible = false;
         }
 
         public void update_view_on_hide(AppController controler) {
+                conf_button.visible = true;
+
                 ArrayList<AddTimeButton> add_time_buttons = new ArrayList<AddTimeButton>();
 
                 int sv;

@@ -31,6 +31,7 @@ namespace App.Controllers {
         private Gee.ArrayQueue<AppView> views_stack;
         private Gee.HashMap<string, AppView> registered_views;
         private AppController app_controller;
+        private ViewConf view3;
 
         public ViewController (AppController controler) {
             this.app_controller = controler;
@@ -44,7 +45,7 @@ namespace App.Controllers {
             View2 view2 = new View2(controler);
             this.register_view (view2);
             // conf view
-            ViewConf view3 = new ViewConf(controler);
+            view3 = new ViewConf(controler);
             this.register_view (view3);
             // ADD INITIAL VIEW TO STACK
             this.add_view (initv);
