@@ -47,6 +47,7 @@ namespace App.Views {
         private Gtk.Box get_continue_button() {
             Gtk.Box box = new Gtk.Box(Gtk.Orientation.HORIZONTAL, 0);
             this.continue_button = new Button.with_label(_("Continue"));
+            this.continue_button.get_style_context().add_class ("redbutton");
             box.pack_start (this.continue_button, true, true, 10);
             return box;
         }

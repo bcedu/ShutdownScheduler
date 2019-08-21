@@ -37,3 +37,8 @@ conf_btn_entry, .conf_btn_entry{
 }
 conf_btn_types, .conf_btn_types{}
 
+redtimebutton, .redbutton {
+    background-color: #f6474f;
+    color: white;
+    border-color: #f6474f;
+}
