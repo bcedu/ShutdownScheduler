@@ -79,7 +79,11 @@ namespace App.Widgets {
         public void update_button(int time, string units) {
             this.time = time;
             this.units = units;
-            this.set_label("%d %s".printf(time, units));
+            string printable_units = units;
+            if (time < 10) {
+                printable_units = "%s  ".printf(printable_units);
+            }
+            this.set_label("%d %s".printf(time, printable_units));
         }
 
     }

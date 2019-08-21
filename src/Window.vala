@@ -53,6 +53,13 @@ namespace App {
             this.init_css ();
             this.load_window_state ();
             this.delete_event.connect (save_window_state);
+            var geometry = Gdk.Geometry () {
+                min_width = 600,
+                max_width = -1,
+                min_height = 400,
+                max_height = -1
+            };
+            this.set_geometry_hints (this, geometry, Gdk.WindowHints.MIN_SIZE);
        }
 
         public void init() {

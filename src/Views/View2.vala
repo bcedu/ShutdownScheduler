@@ -10,7 +10,6 @@ namespace App.Views {
         public View2 (AppController controler) {
             this.remaining_time_lbl = new Label(_("No shutdown programed"));
             this.remaining_time_lbl.get_style_context().add_class ("timelabel");
-            this.cancel_button = new Button.with_label(_("Cancel"));
             this.pack_start (this.remaining_time_lbl, true, true, 0);
             this.pack_start (get_cancel_button (), false, false, 10);
             this.get_style_context().add_class ("app_view");
@@ -44,6 +43,7 @@ namespace App.Views {
         private Gtk.Box get_cancel_button() {
             Gtk.Box box = new Gtk.Box(Gtk.Orientation.HORIZONTAL, 0);
             this.cancel_button = new Button.with_label(_("Cancel"));
+            this.cancel_button.get_style_context().add_class ("redbutton");
             box.pack_start (this.cancel_button, true, true, 10);
             return box;
         }
