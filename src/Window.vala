@@ -60,6 +60,8 @@ namespace App {
                 max_height = -1
             };
             this.set_geometry_hints (this, geometry, Gdk.WindowHints.MIN_SIZE);
+            this.set_default_size(-1, -1);
+            this.set_resizable(false);
        }
 
         public void init() {
