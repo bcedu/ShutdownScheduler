@@ -39,6 +39,16 @@
       <url type="bugtracker">https://github.com/bcedu/ShutdownScheduler/issues</url>
       <url type="help">https://github.com/bcedu/ShutdownScheduler/issues</url>
       <releases>
+        <release version="1.6.1" date="2019-09-29">
+    ​      <description>
+    ​        <p>Update release</p>
+            <ul>
+                <li>New logo by @Fatih20</li>
+                <li>`Continue` and `Cancel` buttons now are red</li>
+                <li>Window is not resizable to mantaine the buttons making a circle</li>
+            </ul>
+    ​      </description>
+    ​    </release>
         <release version="1.5.0" date="2019-04-21">
     ​      <description>
     ​        <p>App rewriten from scratch</p>
