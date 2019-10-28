@@ -8,77 +8,78 @@ msgstr ""
 "Project-Id-Version: com.github.bcedu.shutdownscheduler\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-05-14 18:33+0200\n"
-"PO-Revision-Date: 2019-05-09 21:12+0200\n"
-"Last-Translator: Automatically generated\n"
+"PO-Revision-Date: 2019-10-28 16:53+0100\n"
+"Last-Translator: Heimen Stoffels <vistausss@outlook.com>\n"
 "Language-Team: none\n"
 "Language: nl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 2.2.4\n"
 
 #: src/Configs/Constants.vala:30
 msgid "Shutdown Scheduler"
-msgstr ""
+msgstr "Afsluitplanning"
 
 #: src/Widgets/HeaderBar.vala:47
 msgid "Back"
-msgstr ""
+msgstr "Terug"
 
 #: src/Views/View1.vala:27
 msgid "Choose Date"
-msgstr ""
+msgstr "Kies een datum"
 
 #: src/Views/View1.vala:29
 msgid "Choose Time"
-msgstr ""
+msgstr "Kies een tijdstip"
 
 #: src/Views/View1.vala:49
 msgid "Continue"
-msgstr ""
+msgstr "Doorgaan"
 
 #: src/Views/View2.vala:11
 msgid "No shutdown programed"
-msgstr ""
+msgstr "Geen afsluitmoment ingepland"
 
 #: src/Views/View2.vala:13 src/Views/View2.vala:33 src/Views/View2.vala:46
 msgid "Cancel"
-msgstr ""
+msgstr "Annuleren"
 
 #: src/Views/ViewConf.vala:26 src/Views/ViewConf.vala:94
 msgid "Fast access buttons"
-msgstr ""
+msgstr "Snelle toegangsknoppen"
 
 #: src/Views/ViewConf.vala:43
 msgid "Save"
-msgstr ""
+msgstr "Opslaan"
 
 #: src/Views/ViewConf.vala:100
 msgid "Reset"
-msgstr ""
+msgstr "Standaardwaarden"
 
 #: src/Views/ViewConf.vala:120
 msgid "Button 1"
-msgstr ""
+msgstr "Knop 1"
 
 #: src/Views/ViewConf.vala:127 src/Views/ViewConf.vala:146
 #: src/Views/ViewConf.vala:165 src/Views/ViewConf.vala:184
 msgid "minutes"
-msgstr ""
+msgstr "minuten"
 
 #: src/Views/ViewConf.vala:128 src/Views/ViewConf.vala:147
 #: src/Views/ViewConf.vala:166 src/Views/ViewConf.vala:185
 msgid "hours"
-msgstr ""
+msgstr "uur"
 
 #: src/Views/ViewConf.vala:139
 msgid "Button 2"
-msgstr ""
+msgstr "Knop 2"
 
 #: src/Views/ViewConf.vala:158
 msgid "Button 3"
-msgstr ""
+msgstr "Knop 3"
 
 #: src/Views/ViewConf.vala:177
 msgid "Button 4"
-msgstr ""
+msgstr "Knop 4"
