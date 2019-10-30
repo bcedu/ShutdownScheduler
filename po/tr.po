@@ -27,7 +27,7 @@ msgstr "Geri"
 
 #: src/Views/View1.vala:27
 msgid "Choose Date"
-msgstr Tarih Seç"
+msgstr "Tarih Seç"
 
 #: src/Views/View1.vala:29
 msgid "Choose Time"

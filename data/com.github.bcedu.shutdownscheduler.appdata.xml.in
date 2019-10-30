@@ -39,6 +39,11 @@
       <url type="bugtracker">https://github.com/bcedu/ShutdownScheduler/issues</url>
       <url type="help">https://github.com/bcedu/ShutdownScheduler/issues</url>
       <releases>
+        <release version="1.6.3" date="2019-10-30">
+    ​      <description>
+    ​        <p>Turkish and Dutch translations.</p>
+    ​      </description>
+    ​    </release>
         <release version="1.6.1" date="2019-09-29">
     ​      <description>
     ​        <p>Update release</p>
